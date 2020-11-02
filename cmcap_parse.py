@@ -22,8 +22,8 @@ df = pd.DataFrame()
 # currency_columns = currency_rows[0].find_all("td")
 # print()
 
-def Convert(float):
-	return [-i for i in float]
+# def Convert(float):
+# 	return [-i for i in float]
 
 for one_file_name in glob.glob("html_files_trial/*.html"):
 	print(one_file_name)
@@ -40,6 +40,7 @@ for one_file_name in glob.glob("html_files_trial/*.html"):
 		if len(currency_columns)>10:
 			currency_name = currency_columns[2].find("p").text
 			currency_rank = currency_columns[2].find("a")["href"]
+				# rank is messed up- do you really need it?
 			currency_symbol = currency_columns[2].find("p", {"class": "coin-item-symbol"}).text
 			currency_price = currency_columns[3].find("a").text.replace("$","").replace(",","")
 			currency_marketcap = currency_columns[6].find("p").text.replace("$","").replace(",","")
@@ -68,8 +69,8 @@ for one_file_name in glob.glob("html_files_trial/*.html"):
 						'trading_volume-USD': currency_trading_volume_inUSD,
 						'trading_volume-currency': currency_trading_volume_inCurrency,
 						'circulating_supply': currency_circulating_supply,
-						'pct_change_24h': currency_pctchange_24h,
-						'pct_change_7d': currency_pctchange_7d,
+						# 'pct_change_24h': currency_pctchange_24h,
+						# 'pct_change_7d': currency_pctchange_7d,
 						'logo': currency_logo,
 						'link': currency_link
 					}, ignore_index=True)
