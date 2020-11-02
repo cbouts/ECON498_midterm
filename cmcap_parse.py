@@ -22,6 +22,9 @@ df = pd.DataFrame()
 # currency_columns = currency_rows[0].find_all("td")
 # print()
 
+def Convert(float):
+	return [-i for i in float]
+
 for one_file_name in glob.glob("html_files_trial/*.html"):
 	print(one_file_name)
 	scrape_time = os.path.basename(one_file_name).replace("cmcap", "").replace(".html","")
@@ -42,7 +45,14 @@ for one_file_name in glob.glob("html_files_trial/*.html"):
 			currency_marketcap = currency_columns[6].find("p").text.replace("$","").replace(",","")
 			currency_trading_volume_inUSD = currency_columns[7].find("a").text.replace("$","").replace(",","")
 			currency_pctchange_24h = currency_columns[4].find("span").text.replace("%","")
+			if 'class':"downColor___2rlvT"
+			Convert(currency_pctchange_24h)
+
 			currency_pctchange_7d = currency_columns[5].find("span").text.replace("%","")
+			# def Convert(lst): 
+   #  			return [ -i for i in lst ] 
+			# if 'class'="downColor___2rlvT":
+			# 	Convert(currency_pctchange_24h)
 			# to fix the percent changes, maybe try something with the replace function for the positive or negative. ie "if class =   , replace(,"-") or something
 			currency_circulating_supply = currency_columns[8].find("p").text.replace("$","").replace(",","")
 			currency_trading_volume_inCurrency = currency_columns[7].find("p", {"class": "Text-sc-1eb5slv-0 jicUsX"}).text.replace(",","")
