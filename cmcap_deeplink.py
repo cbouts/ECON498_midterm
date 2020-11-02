@@ -14,6 +14,7 @@ df = pd.read_csv("parsed_files/cmc_dataset.csv")
 print(df['link'])
 # loop thorugh links
 # testing this is around 8 minutes in 10/06
+context = ssl._create_unverified_context()
 
 for link in df['link']:
 	filename = link.replace('/currencies/', '')
@@ -22,7 +23,7 @@ for link in df['link']:
 		# if statement makes it robust against interruptions, also ensures that we don't re-download the same files once it has looped through the first 500 links.
 	else
 		print("downloading " + 'link')
-		response = urllib.request.urlopen("https://coinmarketcap.com/" + link)
+		response = urllib.request.urlopen("https://coinmarketcap.com/" + link, context=context)
 		html = response.read()
 		open('deep_link_html/' + filename + '.html.temp', 'wb')
 		# .temp is added to prevent writing empty files when we have interruptions (around 32:50 of 10/06). The file is only renamed into the final format after everything is already written properly. temp prevents it from stopping when it messes up.
