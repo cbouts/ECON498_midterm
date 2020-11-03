@@ -20,28 +20,53 @@ json_data = json.load(f)
 # print(json_data)
 
 print(json_data[0])
-# df = df.append({
-      		'id': json_data['id'],
-			'time': scrape_time
-      		'symbol': json_data['symbol'],
-      		'name': json_data['name'],
-      		'logo': json_data['image'],
-      		'current_price': json_data['current_price'],
-      		'market_cap': json_data['market_cap'],
-      		'market_cap_rank': json_data['market_cap_rank'],
-	      	'total_supply': json_data['total_supply'],
-	      	'max_supply': json_data['max_supply'],
-      		'ath': json_data['ath'],
-      		'ath_date': json_data['ath_date'],
-      		'atl': json_data['atl'],
-      		'atl_date': json_data['atl_date'],
-      		'roi': json_data['roi'],
-      		'price_change_percentage_24h_in_currency': json_data['price_change_percentage_24h_in_currency'],
-      		'price_change_percentage_7d_in_currency': json_data['price_change_percentage_7d_in_currency']
+
+# obj = ?
+
+df = df.append({
+     		'id': json_data[][0],
+     		'symbol': json_data[][1],
+      		'name': json_data[][2],
+      		'logo': json_data[][3],
+	    	'current_price': json_data[][4],
+	    	'market_cap': json_data[][5],
+	    	'market_cap_rank': json_data[][6],
+	    	'total_volume': json_data[][8],
+	    	'circulating_supply': json_data[][15],
+	    	'total_supply': json_data[][16],
+	    	'max_supply': json_data[][17],
+	    	'ath': json_data[][18],
+	    	'ath_date': json_data[][20],
+	    	'atl': json_data[][21],
+	    	'atl_date': json_data[][23],
+	    	'roi': json_data[][24],
+	    	'price_change_percentage_24h_in_currency': json_data[][26],
+	    	'price_change_percentage_7d_in_currency': json_data[][27],
+	    	'time': scrape_time[]
+		}, ignore_index=True)
+
+
+df.to_csv('parsed_files/coingecko_dataset.csv')
+
+
+   #    		'id': json_data['id'],
+			# 'time': scrape_time
+   #    		'symbol': json_data['symbol'],
+   #    		'name': json_data['name'],
+   #    		'logo': json_data['image'],
+   #    		'current_price': json_data['current_price'],
+   #    		'market_cap': json_data['market_cap'],
+   #    		'market_cap_rank': json_data['market_cap_rank'],
+	  #     	'total_supply': json_data['total_supply'],
+	  #     	'max_supply': json_data['max_supply'],
+   #    		'ath': json_data['ath'],
+   #    		'ath_date': json_data['ath_date'],
+   #    		'atl': json_data['atl'],
+   #    		'atl_date': json_data['atl_date'],
+   #    		'roi': json_data['roi'],
+   #    		'price_change_percentage_24h_in_currency': json_data['price_change_percentage_24h_in_currency'],
+   #    		'price_change_percentage_7d_in_currency': json_data['price_change_percentage_7d_in_currency']
 # 	}, ignore_index=True)
-
-# df.to_csv('parsed_files/coingecko_dataset.csv')
-
 
 # print(json_data[0])
 # # df = df.append({
