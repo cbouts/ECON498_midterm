@@ -32,3 +32,19 @@ for link in df['link']:
 		os.rename("deep_link_html/" + filename + '.html.temp', 'deep_link_html/' + filename + '.html')
 		time.sleep(30)
 
+
+
+# _________ when it's time to parse deeplink::
+
+# 	for r in currency_rows:
+		# currency_columns = r.find_all("td")
+		# name = 
+		# market_rank = 
+		# total_supply = 
+		# max_supply =
+		# ath = 
+		# ath_date = 
+		# atl =
+		# atl_date =
+		# roi = 
+

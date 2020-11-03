@@ -22,6 +22,7 @@ for json_file_name in glob.glob('json_files_trial/*.json'):
 	
 		df = df.append({
 			    'id': coin['id'],
+			    'time': scrape_time,
 	      		'symbol': coin['symbol'],
 				'name': coin['name'],
 				'logo': coin['image'],
@@ -36,8 +37,7 @@ for json_file_name in glob.glob('json_files_trial/*.json'):
 				'ath_date': coin['ath_date'],
 				'atl': coin['atl'],
 				'atl_date': coin['atl_date'],
-				'roi': coin['roi'],
-				'time': scrape_time
+				'roi': coin['roi']
 			}, ignore_index=True)
 	
 # pdb.set_trace()
