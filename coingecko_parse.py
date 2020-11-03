@@ -2,51 +2,73 @@ import json
 import pandas as pd 
 import glob
 import os
-
+import pdb
 
 if not os.path.exists('coingecko_parsed_files'):
 	os.mkdir('coingecko_parsed_files')
 
 df = pd.DataFrame()
 # will need to change the source folder in the line below:
-# for json_file_name in glob.glob('json_files_trial/*.json'):
-json_file_name = 'json_files_trial/coingecko20201101165039.json'
-print(json_file_name)
-scrape_time = os.path.basename(json_file_name).replace("coingecko","").replace(".json","")
-f = open(json_file_name, "r")
-json_data = json.load(f)
-# for ["}"] in json_data:
-# 	replace("},","},\n")
-# print(json_data)
-
-print(json_data[0])
-
-# obj = ?
-
-df = df.append({
-     		'id': json_data[][0],
-     		'symbol': json_data[][1],
-      		'name': json_data[][2],
-      		'logo': json_data[][3],
-	    	'current_price': json_data[][4],
-	    	'market_cap': json_data[][5],
-	    	'market_cap_rank': json_data[][6],
-	    	'total_volume': json_data[][8],
-	    	'circulating_supply': json_data[][15],
-	    	'total_supply': json_data[][16],
-	    	'max_supply': json_data[][17],
-	    	'ath': json_data[][18],
-	    	'ath_date': json_data[][20],
-	    	'atl': json_data[][21],
-	    	'atl_date': json_data[][23],
-	    	'roi': json_data[][24],
-	    	'price_change_percentage_24h_in_currency': json_data[][26],
-	    	'price_change_percentage_7d_in_currency': json_data[][27],
-	    	'time': scrape_time[]
-		}, ignore_index=True)
-
+for json_file_name in glob.glob('json_files_trial/*.json'):
+# json_file_name = 'json_files_trial/coingecko20201101164950.json'
+	print("parsing" + json_file_name)
+	scrape_time = os.path.basename(json_file_name).replace("coingecko","").replace(".json","")
+	f = open(json_file_name, "r")
+	json_data = json.load(f)
+	
+	# pdb.set_trace()
+	
+	for coin in json_data:
+	
+		df = df.append({
+			    'id': coin['id'],
+	      		'symbol': coin['symbol'],
+				'name': coin['name'],
+				'logo': coin['image'],
+				'current_price': coin['current_price'],
+				'market_cap': coin['market_cap'],
+				'market_cap_rank': coin['market_cap_rank'],
+				'total_volume': coin['total_volume'],
+				'circulating_supply': coin['circulating_supply'],
+				'total_supply': coin['total_supply'],
+				'max_supply': coin['max_supply'],
+				'ath': coin['ath'],
+				'ath_date': coin['ath_date'],
+				'atl': coin['atl'],
+				'atl_date': coin['atl_date'],
+				'roi': coin['roi'],
+				'time': scrape_time
+			}, ignore_index=True)
+	
+# pdb.set_trace()
 
 df.to_csv('parsed_files/coingecko_dataset.csv')
+
+
+# df = df.append({
+#      		'id': json_data[][0],
+#      		'symbol': json_data[][1],
+#       	'name': json_data[][2],
+#       	'logo': json_data[][3],
+# 	    	'current_price': json_data[][4],
+# 	    	'market_cap': json_data[][5],
+# 	    	'market_cap_rank': json_data[][6],
+# 	    	'total_volume': json_data[][8],
+# 	    	'circulating_supply': json_data[][15],
+# 	    	'total_supply': json_data[][16],
+# 	    	'max_supply': json_data[][17],
+# 	    	'ath': json_data[][18],
+# 	    	'ath_date': json_data[][20],
+# 	    	'atl': json_data[][21],
+# 	    	'atl_date': json_data[][23],
+# 	    	'roi': json_data[][24],
+# 	    	'price_change_percentage_24h_in_currency': json_data[][26],
+# 	    	'price_change_percentage_7d_in_currency': json_data[][27],
+# 	    	'time': scrape_time[]
+# 		}, ignore_index=True)
+
+
+# df.to_csv('parsed_files/coingecko_dataset.csv')
 
 
    #    		'id': json_data['id'],
