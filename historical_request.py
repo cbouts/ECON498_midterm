@@ -21,8 +21,8 @@ context = ssl._create_unverified_context()
 # 	f.close()
 # 	time.sleep(70)
 
-if not os.path.exists("historical_html_files"):
-	os.mkdir("historical_html_files")
+# if not os.path.exists("historical_html_files"):
+# 	os.mkdir("historical_html_files")
 
 if not os.path.exists("historical_json_files"):
 	os.mkdir("historical_json_files")

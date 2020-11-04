@@ -25,7 +25,7 @@ for one_file_name in glob.glob("deep_link_html/*.html"):
 
 	tables = soup.find("tbody", {"class": "cmc-details-panel-about__table"})
 	row = tables.find_all("tr")
-    market_rank = row[2].find("td").text.replace("#","")
+	market_rank = row[2].find("td").text.replace("#","")
 	ath = row[8].find("div").text.replace("$","").replace(",","").replace(" USD","")
 	atl = row[9].find("div").text.replace("$","").replace(",","").replace(" USD","")
 	roi = row[1].find("span").text
@@ -33,19 +33,16 @@ for one_file_name in glob.glob("deep_link_html/*.html"):
 	max_supply = row[7].find("td").text
 
 # 	df = df.append({
-# 						'name': currency_name,
-# 						'symbol': currency_symbol,
-# 						'time': scrape_time,
-# 						'price': currency_price,
-# 						'market_cap': currency_marketcap,
-# 						'trading_volume-USD': currency_trading_volume_inUSD,
-# 						'trading_volume-currency': currency_trading_volume_inCurrency,
-# 						'circulating_supply': currency_circulating_supply,
-# 						'logo': currency_logo,
-# 						'link': currency_link
+# 					'name': one_file_name.replace(".html","")
+# 					'market_rank': market_rank
+# 					'ath': ath
+# 					'atl': atl
+# 					'roi': roi
+# 					'total_supply': total_supply
+# 					'max_supply': max_supply
 # 					}, ignore_index=True)
 
-# df.to_csv("cmc_parsed_files/cmc_dataset.csv")
+# df.to_csv("cmc_parsed_files/cmc_dataset_with_deeplink.csv")
 
 
 
