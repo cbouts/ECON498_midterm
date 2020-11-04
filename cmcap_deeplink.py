@@ -2,30 +2,27 @@ import urllib.request
 import os
 import time
 import pandas as pd
-import 
-
+import ssl
 
 if not os.path.exists("deep_link_html"):
 	os.mkdir("deep_link_html")
 
-df = pd.read_csv("parsed_files/cmc_dataset.csv")
+df = pd.read_csv("cmc_parsed_files/cmc_dataset.csv")
 # make sure you have the right csv here.
 
 print(df['link'])
-# loop thorugh links
-# testing this is around 8 minutes in 10/06
 context = ssl._create_unverified_context()
 
 for link in df['link']:
 	filename = link.replace('/currencies/', '')
-	if os.path.exists("deep_link_html/" + filename + ".html")
+	if os.path.exists("deep_link_html/" + filename + ".html"):
 		print(filename + ".html already exists.")
 		# if statement makes it robust against interruptions, also ensures that we don't re-download the same files once it has looped through the first 500 links.
-	else
-		print("downloading " + 'link')
+	else:
+		print("downloading " + link)
 		response = urllib.request.urlopen("https://coinmarketcap.com/" + link, context=context)
 		html = response.read()
-		open('deep_link_html/' + filename + '.html.temp', 'wb')
+		f = open('deep_link_html/' + filename + '.html.temp', 'wb')
 		# .temp is added to prevent writing empty files when we have interruptions (around 32:50 of 10/06). The file is only renamed into the final format after everything is already written properly. temp prevents it from stopping when it messes up.
 		f.write(html)
 		f.close()
@@ -33,18 +30,4 @@ for link in df['link']:
 		time.sleep(30)
 
 
-
-# _________ when it's time to parse deeplink::
-
-# 	for r in currency_rows:
-		# currency_columns = r.find_all("td")
-		# name = 
-		# market_rank = 
-		# total_supply = 
-		# max_supply =
-		# ath = 
-		# ath_date = 
-		# atl =
-		# atl_date =
-		# roi = 
 

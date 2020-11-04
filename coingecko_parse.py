@@ -9,7 +9,7 @@ if not os.path.exists('coingecko_parsed_files'):
 
 df = pd.DataFrame()
 # will need to change the source folder in the line below:
-for json_file_name in glob.glob('json_files_trial/*.json'):
+for json_file_name in glob.glob('json_files_2/*.json'):
 # json_file_name = 'json_files_trial/coingecko20201101164950.json'
 	print("parsing" + json_file_name)
 	scrape_time = os.path.basename(json_file_name).replace("coingecko","").replace(".json","")
@@ -42,7 +42,7 @@ for json_file_name in glob.glob('json_files_trial/*.json'):
 	
 # pdb.set_trace()
 
-df.to_csv('parsed_files/coingecko_dataset.csv')
+df.to_csv('coingecko_parsed_files/coingecko_dataset.csv')
 
 
 # df = df.append({

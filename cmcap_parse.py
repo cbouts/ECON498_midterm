@@ -22,10 +22,8 @@ df = pd.DataFrame()
 # currency_columns = currency_rows[0].find_all("td")
 # print()
 
-# def Convert(float):
-# 	return [-i for i in float]
 
-for one_file_name in glob.glob("html_files_trial/*.html"):
+for one_file_name in glob.glob("html_files_2/*.html"):
 	print(one_file_name)
 	scrape_time = os.path.basename(one_file_name).replace("cmcap", "").replace(".html","")
 	f = open(one_file_name, "r")
@@ -39,43 +37,28 @@ for one_file_name in glob.glob("html_files_trial/*.html"):
 		currency_columns = r.find_all("td")
 		if len(currency_columns)>10:
 			currency_name = currency_columns[2].find("p").text
-			currency_rank = currency_columns[2].find("a")["href"]
-				# rank is messed up- do you really need it?
 			currency_symbol = currency_columns[2].find("p", {"class": "coin-item-symbol"}).text
 			currency_price = currency_columns[3].find("a").text.replace("$","").replace(",","")
 			currency_marketcap = currency_columns[6].find("p").text.replace("$","").replace(",","")
 			currency_trading_volume_inUSD = currency_columns[7].find("a").text.replace("$","").replace(",","")
-			currency_pctchange_24h = currency_columns[4].find("span").text.replace("%","")
-			if 'class':"downColor___2rlvT"
-			Convert(currency_pctchange_24h)
-
-			currency_pctchange_7d = currency_columns[5].find("span").text.replace("%","")
-			# def Convert(lst): 
-   #  			return [ -i for i in lst ] 
-			# if 'class'="downColor___2rlvT":
-			# 	Convert(currency_pctchange_24h)
-			# to fix the percent changes, maybe try something with the replace function for the positive or negative. ie "if class =   , replace(,"-") or something
 			currency_circulating_supply = currency_columns[8].find("p").text.replace("$","").replace(",","")
 			currency_trading_volume_inCurrency = currency_columns[7].find("p", {"class": "Text-sc-1eb5slv-0 jicUsX"}).text.replace(",","")
 			currency_link = currency_columns[2].find("a")["href"]
 			currency_logo = currency_columns[2].find("a").find('img')
 			df = df.append({
-						'time': scrape_time,
 						'name': currency_name,
 						'symbol': currency_symbol,
-						'rank': currency_rank,
+						'time': scrape_time,
 						'price': currency_price,
 						'market_cap': currency_marketcap,
 						'trading_volume-USD': currency_trading_volume_inUSD,
 						'trading_volume-currency': currency_trading_volume_inCurrency,
 						'circulating_supply': currency_circulating_supply,
-						# 'pct_change_24h': currency_pctchange_24h,
-						# 'pct_change_7d': currency_pctchange_7d,
 						'logo': currency_logo,
 						'link': currency_link
 					}, ignore_index=True)
 
-df.to_csv("cmc_parsed_files/TRIALcmc_dataset.csv")
+df.to_csv("cmc_parsed_files/cmc_dataset.csv")
 
 
 # ______

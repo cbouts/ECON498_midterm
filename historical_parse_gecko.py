@@ -42,4 +42,4 @@ for json_file_name in glob.glob('historical_json_files/*.json'):
 	
 # pdb.set_trace()
 
-df.to_csv('parsed_files/coingecko_dataset.csv')
+df.to_csv('parsed_files/historical_coingecko_dataset.csv')
