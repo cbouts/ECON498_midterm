@@ -17,8 +17,9 @@ for one_file_name in glob.glob("deep_link_html/*.html"):
 	
 	tables = soup.find("tbody", {"class": "cmc-details-panel-about__table"})
 	rows = soup.find_all("tr")
+	# print(len(tables))
 
-	if len(tables)==1:
+	if len(tables)==19:
 	# cmcap_deeplink.py downloaded the htmls in a way that some have all rows in one order within one tbody, but /n
 	# others have four tbodys containing the same rows in a different order. This is the reason for the "if/else" /n
 	# structure. within each of these groups of htmls, some coins have incomplete data listed. This program skips over them and notes /n
@@ -32,7 +33,7 @@ for one_file_name in glob.glob("deep_link_html/*.html"):
 			max_supply = rows[7].find("td").text.replace(",","")
 
 			df = df.append({
-						'name': one_file_name.replace(".html",""),
+						'name': one_file_name.replace("deep_link_html/","").replace(".html",""),
 						'market_rank': market_rank,
 						'ath': ath,
 						'atl': atl,
@@ -46,15 +47,15 @@ for one_file_name in glob.glob("deep_link_html/*.html"):
 	else:
 		try:
 			market_rank = rows[4].find("td").text.replace("#","")
-			ath = rows[13].find("div").text.replace("$","").replace(",","").replace(" USD","")
-			atl = rows[14].find("div").text.replace("$","").replace(",","").replace(" USD","")
+			ath = rows[13].find("div").text.replace("$","").replace(",","").replace(" USD","").replace(" /","")
+			atl = rows[14].find("div").text.replace("$","").replace(",","").replace(" USD","").replace(" /","")
 			roi = rows[15].find("span")
 			# roi = rows[15].find("span").text
 			total_supply = rows[17].find("td").text.replace(",","")
 			max_supply = rows[18].find("td").text.replace(",","")
 
 			df = df.append({
-						'name': one_file_name.replace(".html",""),
+						'name': one_file_name.replace("deep_link_html/","").replace(".html",""),
 						'market_rank': market_rank,
 						'ath': ath,
 						'atl': atl,
