@@ -46,7 +46,7 @@ using the file ------ and get:
 We see on these charts that ----- 
 
 ## Detecting Associations
-
+The currencies on these sites are ranked by market capitalization. However, market cap is only one of the several most important metrics for cryptocurrency. Arguably, volume and circulating supply are just as salient as market cap. As a result, it's important to know the extent to which we can use market cap-based rankings by coinmarketcap and coingecko to proxy for volume and circulating supply. 
 
 
 
