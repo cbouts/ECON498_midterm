@@ -21,4 +21,13 @@ First, I compiled summary statistics for each coin on each website by running th
   - [market_cap_cmc.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_cmc.csv)
   - [market_cap_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_gecko.csv)
 
-While looking over these files, it becomes clear that although the sites report on the same information, their reporting differs significantly. 
+While looking over these files, it becomes intuitively clear that although the sites report on the same information, their reporting differs significantly. To ensure that this intuition is correct, we run ----
+
+and get -----
+
+These results support the intuiton that the sites report their data differently.
+
+
+## Time-Informed Analysis
+
+Having established through summary statistics that the reporting varies on the aggregate, we now make use of the time variation in our data to further explore these differences. We would like to somehow look at all 500 coins simultaneously on a multiple line graph that plots a variable of interest (price, market cap, or volume) against the time of observation. However, such a graph would have 1000 lines going through it (one line per coin per site), and would certainly be nonsensical. Having considered this and other potential methods of analysis, it seems that it would be most informative to make graphs of 
