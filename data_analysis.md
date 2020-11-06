@@ -4,7 +4,7 @@
 * [Choosing Variables of Interest](#Choosing Variables of Interest)
 * [Summary Statistics](#Summary Statistics)
 * [Time-Informed Analysis](#Time-Informed Analysis)
-* [Detecting Association Between Market Cap and Volume](#Detecting Association Between Market Cap and Volume)
+* [Detecting Associations Between Market Cap and Volume](#Detecting Associations)
 * [Time-Informed Analysis](#Time-Informed Analysis)
 
 
@@ -45,7 +45,7 @@ using the file ------ and get:
 
 We see on these charts that ----- 
 
-## Detecting Association Between Market Cap and Volume
+## Detecting Associations
 
 
 
