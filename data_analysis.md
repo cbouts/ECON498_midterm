@@ -3,9 +3,22 @@
 ## Contents
 
 ## Motivation/Choosing Variables of Interests
-Before I begin the analysis, I want to make sure that my data contains complete information. To do this, we run the file [cleaning.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cleaning.py). This gives us a terminal output identifying the percentage of observations missing for each main variable in each of our 3 main datasets. This is the output. 
+As the data I have collected is imperfect, I want to make sure that my data contains complete information for the most salient variables. To do this, we run the file [cleaning.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cleaning.py). This gives us a terminal output identifying the percentage of observations missing for each main variable in each of our 3 main datasets. This is the output. 
 
 <img width="409" alt="Screen Shot 2020-11-05 at 3 08 00 PM" src="https://user-images.githubusercontent.com/70339619/98393218-fc611900-2026-11eb-97f4-6fcac9333e65.png">
 
 It shows, for example, that 64% of observations for return on investment for coingecko are missing. As it is, this collection of ROI values is not complete enough to use for analysis. Due to time and knowledge constraints, we opt instead to use other variables that have more complete information. These variables include price, market capitalization, and volume. As each of these is centraly important for cryptocurrency analysts, and because we have complete information for these, we focus the rest of our analysis on these variables.
 
+## Summary Statistics
+First, I compiled summary statistics for each coin on each website by running the file [summary_statistics.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/summary_statistics.py). This yielded 6 new csvs: 
+- Summary statistics on volume:
+  - [volume_cmc.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/volume_cmc.csv)
+  - [volume_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/volume_gecko.csv)
+- Summary statistics on price:
+  - [price_cmc.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/price_cmc.csv)
+  - [price_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/price_gecko.csv)
+- Summary statistics on market cap: 
+  - [market_cap_cmc.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_cmc.csv)
+  - [market_cap_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_gecko.csv)
+
+While looking over these files, it becomes clear that although the sites report on the same information, their reporting differs significantly. 
