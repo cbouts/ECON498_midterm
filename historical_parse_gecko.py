@@ -11,24 +11,33 @@ if not os.path.exists('coingecko_parsed_files'):
 df = pd.DataFrame()
 
 for json_file_name in glob.glob('historical_json_files/*.json'):
-# json_file_name = 'historical_json_files/0x.json'
+# # json_file_name = 'historical_json_files/0x.json'
 	print("parsing " + json_file_name)
 	f = open(json_file_name, "r")
 	json_data = json.load(f)
-	for i in range(1,365):
-		unix_timestamp = json_data['prices'][i][0]
-		local_timezone = tzlocal.get_localzone()
-		local_time = datetime.fromtimestamp(unix_timestamp/1000, local_timezone)
-		date = local_time.strftime("%Y%m%d")
-		print(date)
-		
-		df = df.append({
-				'date': datetime.datetime.utcfromtimestamp(unix_timestamp).strftime("%Y%m%d%H%M%S")
-				# CONVERT THIS!
-				'price': json_data['prices'][i][1]
-				'market_caps': json_data['market_caps'][i][1]
-				'total_volumes': json_data['total_volumes'][i][1]
-			}, ignore_index=True)
-	
+	if len(json_data)==3:
+		for i in range(1,365):
+			unix_timestamp = json_data['prices'][i][0]
+			local_timezone = tzlocal.get_localzone()
+			local_time = datetime.fromtimestamp(unix_timestamp/1000, local_timezone)
+			date = local_time.strftime("%Y%m%d")
 
+			prices = json_data['prices'][i][1]
+			market_caps = json_data['market_caps'][i][1]
+			total_volumes = json_data['total_volumes'][i][1]
+			
+			df = df.append({
+					date
+					prices
+					market_caps
+					total_volumes
+					# 'date': date
+					# # CONVERT THIS!
+					# 'prices': prices
+					# 'market_caps': market_caps
+					# 'total_volumes': total_volumes
+				}, ignore_index=True)
+	else:
+		print("ERROR: no data for " json_file_name.replace("historical_json","").replace(".json",""))
+	
 df.to_csv('parsed_files/historical_coingecko_dataset.csv')
