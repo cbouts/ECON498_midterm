@@ -13,9 +13,10 @@ This project downloads and parses salient data on the top 500 cryptocurrencies (
 This project was made on Python 3.7, so that or a newer version may be required to run it. 
 
 The programs also use the modules numpy, matplotlib, bs4, pandas, sklearn, tzlocal, and requests. If you don't have these already, you may need to install them by writing:
-
 `pip -m install numpy matplotlib bs4 pandas sklearn tzlocal requests`
-
+in the terminal.
 
 ## Installation
-To run this project, you will need to install it on your computer. To do this, you can 
+To run this project, you will need to install it on your computer. To do this, write
+`pip install git+git://github.com/cbouts/midterm_project.git`
+in the terminal.
