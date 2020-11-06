@@ -30,4 +30,18 @@ These results support the intuiton that the sites report their data differently.
 
 ## Time-Informed Analysis
 
-Having established through summary statistics that the reporting varies on the aggregate, we now make use of the time variation in our data to further explore these differences. We would like to somehow look at all 500 coins simultaneously on a multiple line graph that plots a variable of interest (price, market cap, or volume) against the time of observation. However, such a graph would have 1000 lines going through it (one line per coin per site), and would certainly be nonsensical. Having considered this and other potential methods of analysis, it seems that it would be most informative to make graphs of 
+Having established through summary statistics that the reporting varies on the aggregate, we now make use of the time variation in our data to further explore these differences. We would like to somehow look at all 500 coins simultaneously on a multiple line graph that plots a variable of interest (price, market cap, or volume) against the time of observation. However, such a graph would have 1000 lines going through it (one line per coin per site), and would certainly be a nonsensical blob of lines. Having considered this and other potential methods of analysis, it seems that it would be most informative to make these graphs for several individual coins. I make graphs to track each site's reportings of price, volume, and market cap over the 48 hour time period for the coins Bitcoin (ranked first by market cap), Digibyte (ranked around 50th by market cap), Bytom (ranked around 100th by market cap), Adx (ranked around 200th by market cap), and Contracoin (ranked around 300th by market cap). 
+
+using the file ------ and get: 
+
+
+
+We see on these charts that ----- 
+
+## 
+
+
+
+
+
+
