@@ -14,7 +14,7 @@ As the data I have collected is imperfect, I want to make sure that my data cont
 
 <img width="409" alt="Screen Shot 2020-11-05 at 3 08 00 PM" src="https://user-images.githubusercontent.com/70339619/98393218-fc611900-2026-11eb-97f4-6fcac9333e65.png">
 
-It shows, for example, that 64% of observations for return on investment for coingecko are missing. As it is, this collection of ROI values is not complete enough to use for analysis. Due to time and knowledge constraints, we opt instead to use other variables that have more complete information. These variables include price, market capitalization, circulating supply, and volume. As each of these is centraly important for cryptocurrency analysts, and because we have complete information for these, we focus the rest of our analysis on these variables.
+It shows, for example, that 64% of observations for return on investment for coingecko are missing. As it is, this collection of ROI values is not complete enough to use for analysis. Due to time and knowledge constraints, we opt instead to use other variables that have more complete information. These variables include price, market capitalization, and volume. As each of these is centraly important for cryptocurrency analysts, and because we have complete information for these, we focus the rest of our analysis on these variables.
 
 ## Summary Statistics
 First, I compiled summary statistics for each coin on each website by running the file [summary_statistics.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/summary_statistics.py). This yielded 6 new csvs: 
@@ -27,12 +27,18 @@ First, I compiled summary statistics for each coin on each website by running th
 - Summary statistics on market cap: 
   - [market_cap_cmc.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_cmc.csv)
   - [market_cap_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_gecko.csv)
- - Summary statistics on circulating supply:
-  - 
 
-While looking over these files, it becomes intuitively clear that although the sites report on the same information, their reporting differs. To illustrate these differences, the graphs (which come from running the file ------) below compare the mean prices, market caps, and volumes for the coins that feature on the top 500 list during the 48 hour time period.
 
-----
+While looking over these files, it becomes intuitively clear that although the sites report on the same information, their reporting differs. To illustrate these differences, the graphs (from Excel) below compare the mean prices, market caps, and volumes for the coins that feature on the top 500 list during the 48 hour time period.
+
+Comparison of mean market caps:
+
+
+Comparison of mean prices:
+
+
+Comparison of mean volumes:
+
 
 
 ## Time-Informed Analysis
