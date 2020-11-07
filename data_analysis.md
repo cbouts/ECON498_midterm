@@ -59,7 +59,7 @@ In this picture, it's more evident that not all noise around the X = Y line lies
 
 
 ## Time-Informed Analysis
-Having established through summary statistics that the sites' reporting varies on the aggregate, we now make use of the time variation in our data to further explore these differences. We would like to somehow look at all 500 coins simultaneously on a multiple line graph that plots a variable of interest (price, market cap, or volume) against the time of observation. However, such a graph would have 1000 lines going through it (one line per coin per site), and would certainly be a nonsensical blob of lines. Having considered this and other potential methods of analysis, it seems that it would be most informative to make these graphs for several individual coins. I use the datasets [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv) and [gecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/gecko_dataset.csv) to make graphs in Excel tracking each site's reportings of price, volume, and market cap over the 48 hour time period for the coins Bitcoin (BTC, ranked first by market cap), Digibyte (DGB, ranked around 50th by market cap), Bytom (BTM, ranked around 100th by market cap), AdEx (ADX, ranked around 200th by market cap), and ARPA Chain (ARPA, ranked around 300th by market cap). All of these charts can be found in the [data_analysis folder](https://github.com/cbouts/midterm_project/tree/main/data_analysis), and can be understood with the knowledge that observations were gathered every 15 minutes for 48 hours, yielding the 192 observations reflected on the x axis.
+Having established through summary statistics that the sites' reporting varies on the aggregate, we now make use of the time variation in our data to further explore these differences. We would like to somehow look at all 500 coins simultaneously on a multiple line graph that plots a variable of interest (price, market cap, or volume) against the time of observation. However, such a graph would have 1000 lines going through it (one line per coin per site), and would certainly be a nonsensical blob of lines. Having considered this and other potential methods of analysis, it seems that it would be most informative to make these graphs for several individual coins. I use the datasets [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv) and [gecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/gecko_dataset.csv) to make graphs in Excel tracking each site's reportings of price, volume, and market cap over the 48 hour time period for the coins Bitcoin (BTC, ranked first by market cap), Digibyte (DGB, ranked around 50th by market cap), Bytom (BTM, ranked around 100th by market cap), AdEx (ADX, ranked around 200th by market cap), and ARPA Chain (ARPA, ranked around 300th by market cap). All of these charts can be found in the [data_analysis folder](https://github.com/cbouts/midterm_project/tree/main/data_analysis), and can be understood with the knowledge that observations were gathered every 15 minutes for 48 hours, yielding the 192 observations reflected on the x axis. Coinmarketcap data is in orange and Coingecko data is in blue.
 
 - For BTC:
   - Price: [BTC_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTC_price.png)
@@ -85,22 +85,23 @@ Having established through summary statistics that the sites' reporting varies o
 
 We now examine market cap, price, and volume in turn by looking to these graphs.
 
-##### Market Cap
+#### Market Cap
 ![BTC_mc](/data_analysis/BTC_mc.png)
 ![DGB_mc](/data_analysis/DGB_mc.png)
 ![BTM_mc](/data_analysis/BTM_mc.png)
 ![ADX_mc](/data_analysis/ADX_mc.png)
 ![ARPA_mc](/data_analysis/ARPA_mc.png)
-Scrolling through these graphs, we notice some variation.
 
-##### Price
+Scrolling through these graphs, we notice some variation. For BTC and ADX, Coingecko and Coinmarketcap report roughly the same market cap values over the 48 hours of interest. The DGB graph illustrates that for this coin, Coingecko and Coinmarketcap report very similar market cap values on average, but that there is a higher variance in Coingecko's reporting of market cap. While these 3 graphs suggest that Coingecko and Coinmarketcap report the same market caps on average for given coins, the graphs for BTM and ARPA suggest that Coingecko reports a higher market cap on average for a given coin than Coinmarketcap does. It is reasonable to infer from these graphs that on average, Coingecko's reported market cap values will be either higher than or the same as those reported by Coinmarketcap.
+
+#### Price
 ![BTC_price](/data_analysis/BTC_price.png)
 ![DGB_price](/data_analysis/DGB_price.png)
 ![BTM_price](/data_analysis/BTM_price.png)
 ![ADX_price](/data_analysis/ADX_price.png)
 ![ARPA_price](/data_analysis/ARPA_price.png)
 
-##### Volume
+#### Volume
 ![BTC_volume](/data_analysis/BTC_volume.png)
 ![DGB_volume](/data_analysis/DGB_volume.png)
 ![BTM_Volume](/data_analysis/BTM_Volume.png)
