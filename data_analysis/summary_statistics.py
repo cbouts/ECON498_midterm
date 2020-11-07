@@ -26,7 +26,6 @@ df.to_csv('volume_cmc.csv', header = True)
 df = grouped['price'].agg([np.mean, np.std, np.amin, np.amax])
 df.to_csv('price_cmc.csv', header = True)
 
-
 # FOR COINGECKO:
 
 # market cap:
