@@ -131,7 +131,8 @@ It is harder to identify trends in the volume graphs because it is only for DGB 
 
 
 ## Detecting Associations
-The currencies on these sites are ranked by market capitalization. However, market cap is only one of the several most important metrics for cryptocurrency. Arguably, volume and circulating supply are just as salient as market cap. As a result, it's important to know whether, and if so, the extent to which we can use market cap-based rankings by coinmarketcap and coingecko to proxy for volume and circulating supply. To do this, we need to determine the correlation between market cap and volume, as well as that between market cap and price, for each site. We do this with linear regression using the file ___ to get results-----
+The currencies on these sites are ranked by market capitalization. However, market cap is only one of the several most important metrics for cryptocurrency. Arguably, volume and circulating supply are just as salient as market cap. As a result, it's important to know whether, and if so, the extent to which we can use market cap-based rankings by coinmarketcap and coingecko to proxy for volume and circulating supply. To do this, we need to determine the correlation between market cap and volume, as well as that between market cap and price, for each site. We do this with linear regression by running the file [linear_regression.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/linear_regression.py). These are the results:
+
 
 
 
