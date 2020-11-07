@@ -59,16 +59,13 @@ In this picture, it's more evident that not all noise around the X = Y line lies
 
 
 ## Time-Informed Analysis
-Having established through summary statistics that the sites' reporting varies on the aggregate, we now make use of the time variation in our data to further explore these differences. We would like to somehow look at all 500 coins simultaneously on a multiple line graph that plots a variable of interest (price, market cap, or volume) against the time of observation. However, such a graph would have 1000 lines going through it (one line per coin per site), and would certainly be a nonsensical blob of lines. Having considered this and other potential methods of analysis, it seems that it would be most informative to make these graphs for several individual coins. I use  make graphs to track each site's reportings of price, volume, and market cap over the 48 hour time period for the coins Bitcoin (ranked first by market cap), Digibyte (ranked around 50th by market cap), Bytom (ranked around 100th by market cap), Adx (ranked around 200th by market cap), and Contracoin (ranked around 300th by market cap).
-[cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv) and [gecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/gecko_dataset.csv).
-using the file ------ and get: 
-
+Having established through summary statistics that the sites' reporting varies on the aggregate, we now make use of the time variation in our data to further explore these differences. We would like to somehow look at all 500 coins simultaneously on a multiple line graph that plots a variable of interest (price, market cap, or volume) against the time of observation. However, such a graph would have 1000 lines going through it (one line per coin per site), and would certainly be a nonsensical blob of lines. Having considered this and other potential methods of analysis, it seems that it would be most informative to make these graphs for several individual coins. I use the datasets [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv) and [gecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/gecko_dataset.csv) to make graphs tracking each site's reportings of price, volume, and market cap over the 48 hour time period for the coins Bitcoin (BTC, ranked first by market cap), Digibyte (DGB, ranked around 50th by market cap), Bytom (BYT, ranked around 100th by market cap), AdEx (ADX, ranked around 200th by market cap), and ARPA Chain (ARPA, ranked around 300th by market cap).
 
 
 We see on these charts that ----- 
 
 ## Detecting Associations
-The currencies on these sites are ranked by market capitalization. However, market cap is only one of the several most important metrics for cryptocurrency. Arguably, volume and circulating supply are just as salient as market cap. As a result, it's important to know the extent to which we can use market cap-based rankings by coinmarketcap and coingecko to proxy for volume and circulating supply. 
+The currencies on these sites are ranked by market capitalization. However, market cap is only one of the several most important metrics for cryptocurrency. Arguably, volume and circulating supply are just as salient as market cap. As a result, it's important to know whether, and if so, the extent to which we can use market cap-based rankings by coinmarketcap and coingecko to proxy for volume and circulating supply. 
 
 
 
