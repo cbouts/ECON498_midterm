@@ -20,3 +20,5 @@ in the terminal.
 To run this project, you will need to install it on your computer. To do this, write
 `pip install git+git://github.com/cbouts/midterm_project.git`
 in the terminal.
+
+## Usage
