@@ -59,7 +59,7 @@ Finally, we compare the mean of the sites' measures of volumes over the 48 hour 
 
 ![Means_Volumes_2](/data_analysis/Mean_Volumes_2.png)
 
-In this picture, it's more evident that not all noise around the X = Y line lies above this line. This discredits the inference that Coinmarketcap tends to report values for volume as higher than those reported by Coingecko. Still, it increases our confidence in the notion that Coinmarketcap and Coingecko report on key indicators differently.
+In this picture, it's more evident that not all noise around the X = Y line lies above this line. This discredits the inference that Coinmarketcap tends to report values for volume as higher than those reported by Coingecko. Still, it increases our confidence in the notion that Coinmarketcap and Coingecko report on key indicators differently. Additionally, the comparatively high amount of noise around the X=Y line in the second volume means that volume is likely to be associated with a higher discrepancy between the websites.
 
 
 ## Time-Informed Analysis
