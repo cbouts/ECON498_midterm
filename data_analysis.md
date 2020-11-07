@@ -112,7 +112,7 @@ Scrolling through these graphs, we notice some variation. For BTC and ADX, Coing
 ![ARPA_price](/data_analysis/ARPA_price.png)
 
 
-The graphs for price are more uniform than those for market cap. This is to be expected because price is much simpler than marketcap is. For each of these coins, the two sites report roughly the same prices on average over the 48 hour period. There is little variation in reported prices for BTC, BTM, ADX, and ARPA. The DGB graph is slightly different- while the sites report the roughly same prices on average, there is more variation in Coingecko's reporting than there is in that of Coinmarketcap. We observed this same phenomenon in  
+The graphs for price are more uniform than those for market cap. This is to be expected because price is much simpler than marketcap is. For each of these coins, the two sites report roughly the same prices on average over the 48 hour period. There is little variation in reported prices for BTC, BTM, ADX, and ARPA. The DGB graph is slightly different- while the sites report the roughly same prices on average, there is more variation in Coingecko's reporting than there is in that of Coinmarketcap. Because we observed this same phenomenon in Coingecko's reporting of market cap in the last section, we speculate that this variance may come from Coingecko's source for information about DGB rather than Coingecko's reporting of this information.
 
 
 ### Volume
