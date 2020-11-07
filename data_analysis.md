@@ -29,21 +29,31 @@ First, I compiled summary statistics for each coin on each website by running th
   - [market_cap_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_gecko.csv)
 
 
-While looking over these files, it becomes intuitively clear that although the sites report on the same information, their reporting differs. To illustrate these differences, the graphs (from Excel) below compare the mean prices, market caps, and volumes for the coins that feature on the top 500 list during the 48 hour time period.
+While looking over these files, it becomes intuitively clear that although the sites report on the same information, their reporting differs. To illustrate these differences, the graphs (from Excel) below compare the mean prices, market caps, and volumes for the coins that feature on the top 500 list during the 48 hour time period. If the sites' reportings were identical, each dot would fall on the X = Y line.
 
-Comparison of mean market caps:
+### Comparison of mean market caps:
 
+![Means_Market_Cap](/data_analysis/Means_Market_Cap.png)
 
-Comparison of mean prices:
+This chart, generated using [market_cap_cmc.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_cmc.csv) and [market_cap_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_gecko.csv) in Excel, plots the mean of Coin Gecko observations of market cap over the 48 hour time period for each coin against the comparable value from Coinmarketcap data. There are a few things to note about this. First, like the similar graphs below, this graph excludes several of the top cryptocurrencies because their presence on the graph distorts the size of the graph in a way that obscures the variation among the vast majority of coins (ie, those not in the top 5 or 10 cryptocurrencies). Second, we see that most dots appear to follow the X = Y line, but there is noticeable variation around this line, especially for the lower ranked currencies. This variation affirms our intuition that the sites report data differently.
 
+### Comparison of mean prices:
 
-Comparison of mean volumes:
+![Means_Prices](/data_analysis/Means_Prices_1.png)
 
+Here, we use Excel to plot data from [price_cmc.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/price_cmc.csv) and [price_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/price_gecko.csv). This data seems to fit the X = Y line very well, but we should remember that we are looking at a graph in which many observations are stuck together right around the origin. What looks like an X = Y trend here may simply be the results of looking at a cluster of data, followed by 12 relatively expensive coins that seem to follow the X = Y line. To get a better understanding, we zoom in on the coins clustered around the origin.
+
+![Means_Prices](/data_analysis/Mean_Price_2.png)
+
+From this perspective, there is obvious noise around the X = Y line, so we have an indication that the sites report prices differently.
+
+### Comparison of mean volumes:
+Finally, we compare the mean of the sites' measures of volumes over the 48 hour period. 
 
 
 ## Time-Informed Analysis
 
-Having established through summary statistics that the reporting varies on the aggregate, we now make use of the time variation in our data to further explore these differences. We would like to somehow look at all 500 coins simultaneously on a multiple line graph that plots a variable of interest (price, market cap, or volume) against the time of observation. However, such a graph would have 1000 lines going through it (one line per coin per site), and would certainly be a nonsensical blob of lines. Having considered this and other potential methods of analysis, it seems that it would be most informative to make these graphs for several individual coins. I make graphs to track each site's reportings of price, volume, and market cap over the 48 hour time period for the coins Bitcoin (ranked first by market cap), Digibyte (ranked around 50th by market cap), Bytom (ranked around 100th by market cap), Adx (ranked around 200th by market cap), and Contracoin (ranked around 300th by market cap). 
+Having established through summary statistics that the reporting varies on the aggregate, we now make use of the time variation in our data to further explore these differences. We would like to somehow look at all 500 coins simultaneously on a multiple line graph that plots a variable of interest (price, market cap, or volume) against the time of observation. However, such a graph would have 1000 lines going through it (one line per coin per site), and would certainly be a nonsensical blob of lines. Having considered this and other potential methods of analysis, it seems that it would be most informative to make these graphs for several individual coins. I make graphs to track each site's reportings of price, volume, and market cap over the 48 hour time period for the coins Bitcoin (ranked first by market cap), Digibyte (ranked around 50th by market cap), Bytom (ranked around 100th by market cap), Adx (ranked around 200th by market cap), and Contracoin (ranked around 300th by market cap).
 
 using the file ------ and get: 
 
