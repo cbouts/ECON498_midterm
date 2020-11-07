@@ -43,12 +43,19 @@ This chart, generated using [market_cap_cmc.csv](https://github.com/cbouts/midte
 
 Here, we use Excel to plot data from [price_cmc.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/price_cmc.csv) and [price_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/price_gecko.csv). This data seems to fit the X = Y line very well, but we should remember that we are looking at a graph in which many observations are stuck together right around the origin. What looks like an X = Y trend here may simply be the results of looking at a cluster of data, followed by 12 relatively expensive coins that seem to follow the X = Y line. To get a better understanding, we zoom in on the coins clustered around the origin.
 
-![Means_Prices](/data_analysis/Mean_Price_2.png)
+![Means_Prices_2](/data_analysis/Mean_Price_2.png)
 
 From this perspective, there is obvious noise around the X = Y line, so we have an indication that the sites report prices differently.
 
 ### Comparison of mean volumes:
-Finally, we compare the mean of the sites' measures of volumes over the 48 hour period. 
+
+![Means_Volumes_1](/data_analysis/Mean_Volumes_1.png)
+
+Finally, we compare the mean of the sites' measures of volumes over the 48 hour period. We use Excel to plot data from [volume_cmc.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/volume_cmc.csv) and [volume_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/volume_gecko.csv). This graph is interesting because it doesn't seem like the observations fit the X = Y line especially for the 6 or so rightmost coins. In particular, it seems that the observations tend to lie above this imaginary line that would indicate uniform (on average) reportng of volumes. If this trend was present across the data, we might infer that for the same coins, Coinmarketcap tends to report values for volume as higher than those reported by Coingecko. To get a better idea of what's going on, we should zoom in on the part of the graph with the highest concentration of coins- that near the origin.
+
+![Means_Volumes_2](/data_analysis/Mean_Volumes_2.png)
+
+In this picture, it's more evident that not all noise around the X = Y line lies above this line. This discredits the inference that Coinmarketcap tends to report values for volume as higher than those reported by Coingecko. Still, it increases our confidence in the notion that Coinmarketcap and Coingecko report indicators differently.
 
 
 ## Time-Informed Analysis
