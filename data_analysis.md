@@ -1,7 +1,8 @@
 # Data Analysis
 
 ## Contents
-* [Choosing Variables of Interest](#Choosing Variables of Interest)
+* [Choosing Variables of Interest](#choosing variables of interest)
+* [Choosing Varaibles of int
 * [Summary Statistics](#Summary Statistics)
 * [Time-Informed Analysis](#Time-Informed Analysis)
 * [Detecting Associations Between Market Cap and Volume](#Detecting Associations)
