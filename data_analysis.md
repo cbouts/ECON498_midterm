@@ -84,21 +84,40 @@ Having established through summary statistics that the sites' reporting varies o
   ![BTM_Volume](/data_analysis/BTM_Volume.png)
 - For ADX:
   - Price: [ADX_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ADX_price.png)
-  ![BTC_price](/data_analysis/BTC_price.png)
+  ![ADX_price](/data_analysis/ADX_price.png)
   - Market Cap: [ADX_mc.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ADX_mc.png)
-  ![BTC_price](/data_analysis/BTC_price.png)
+  ![ADX_mc](/data_analysis/ADX_mc.png)
   - Volume: [ADX_volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ADX_volume.png)
-  ![BTC_price](/data_analysis/BTC_price.png)
+  ![ADX_volume](/data_analysis/ADX_volume.png)
 - For ARPA:
   - Price: [ARPA_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ARPA_price.png)
-  ![BTC_price](/data_analysis/BTC_price.png)
+  ![ARPA_price](/data_analysis/ARPA_price.png)
   - Market Cap: [ARPA_mc.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ARPA_mc.png)
-  ![BTC_price](/data_analysis/BTC_price.png)
   - Volume: [ARPA_volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ARPA_volume.png)
-  ![BTC_price](/data_analysis/BTC_price.png)
+  ![ARPA_volume](/data_analysis/ARPA_volume.png)
+We now examine market cap, price, and volume in turn by looking to these graphs.
 
-I don't include all of the charts here because they would take up too much space, but in order to discuss the charts, we show representative examples from 
+##### Market Cap
+![BTC_mc](/data_analysis/BTC_mc.png)
+![DGB_mc](/data_analysis/DGB_mc.png)
+![BTM_mc](/data_analysis/BTM_mc.png)
+![ADX_mc](/data_analysis/ADX_mc.png)
+![ARPA_mc](/data_analysis/ARPA_mc.png)
+Scrolling through these graphs, we notice some variation.
 
+##### Price
+![BTC_price](/data_analysis/BTC_price.png)
+![DGB_price](/data_analysis/DGB_price.png)
+![BTM_price](/data_analysis/BTM_price.png)
+![ADX_price](/data_analysis/ADX_price.png)
+![ARPA_price](/data_analysis/ARPA_price.png)
+
+##### Volume
+![BTC_volume](/data_analysis/BTC_volume.png)
+![DGB_volume](/data_analysis/DGB_volume.png)
+![BTM_Volume](/data_analysis/BTM_Volume.png)
+![ADX_volume](/data_analysis/ADX_volume.png)
+![ARPA_volume](/data_analysis/ARPA_volume.png)
 ## Detecting Associations
 The currencies on these sites are ranked by market capitalization. However, market cap is only one of the several most important metrics for cryptocurrency. Arguably, volume and circulating supply are just as salient as market cap. As a result, it's important to know whether, and if so, the extent to which we can use market cap-based rankings by coinmarketcap and coingecko to proxy for volume and circulating supply. 
 
