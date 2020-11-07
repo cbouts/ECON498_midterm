@@ -131,12 +131,9 @@ It is harder to identify trends in the volume graphs because it is only for DGB 
 
 
 ## Detecting Associations
-The currencies on these sites are ranked by market capitalization. However, market cap is only one of the several most important metrics for cryptocurrency. Arguably, volume and circulating supply are just as salient as market cap. As a result, it's important to know whether, and if so, the extent to which we can use market cap-based rankings by coinmarketcap and coingecko to proxy for volume and circulating supply. To do this, we need to determine the correlation between market cap and volume, as well as that between market cap and price, for each site. We look for these associations with linear regression by running the file [linear_regression.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/linear_regression.py). These are the results:
+The currencies on these sites are ranked by market capitalization. However, market cap is only one of the several most important metrics for cryptocurrency. Arguably, volume and circulating supply are just as salient as market cap. As a result, it's important to know whether, and if so, the extent to which we can use market cap-based rankings by coinmarketcap and coingecko to proxy for volume and circulating supply. This means we want to know whether we can associate a high market cap with a high or low price, as well as whether we can associate a high market cap with a high or low volume. To do this, we need to determine the correlation between market cap and volume, as well as that between market cap and price, for each site. We look for these associations with linear regression by running the file [linear_regression.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/linear_regression.py). These are the results:
 
+<img width="348" alt="Screen Shot 2020-11-07 at 3 02 45 PM" src="https://user-images.githubusercontent.com/70339619/98450381-630b3300-210a-11eb-90d8-2f30b86e8649.png">
 
-
-We see that for 
-
-
-
-
+We see that for both Coinmarketcap and Coingecko, the correlation between market cap and price is extremely close to zero. This suggests that we cannot get indirect evidence about price from the market cap ratings on these sites- we cannot suppose that since coin x has a high market cap, it will also have a high (or low) price. 
+Somewhat similarly, for both sites, the correlation between volume and market cap is small. However, these coefficients suggest a weak positive correlation between volume and market cap, especially for data from Coinmarketcap. This means that if we see a high market cap for a coin, we have at least some reason to suspect that this coin might also have a high volume.
