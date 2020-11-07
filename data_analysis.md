@@ -112,15 +112,24 @@ Scrolling through these graphs, we notice some variation. For BTC and ADX, Coing
 ![ARPA_price](/data_analysis/ARPA_price.png)
 
 
-The graphs for price are more uniform than those for market cap. This is to be expected because price is much simpler than marketcap is. For each of these coins, the two sites report roughly the same prices on average over the 48 hour period. There is little variation in reported prices for BTC, BTM, ADX, and ARPA. The DGB graph is slightly different- while the sites report the roughly same prices on average, there is more variation in Coingecko's reporting than there is in that of Coinmarketcap. Because we observed this same phenomenon in Coingecko's reporting of market cap in the last section, we speculate that this variance may come from Coingecko's source for information about DGB rather than Coingecko's reporting of this information.
+The reportings for price are more uniform than those for market cap. This is to be expected because price is much simpler than marketcap is. For each of these coins, the two sites report roughly the same prices on average over the 48 hour period. There is little variation in reported prices for BTC, BTM, ADX, and ARPA. The DGB graph is slightly different- while the sites report the roughly same prices on average, there is more variation in Coingecko's reporting than there is in that of Coinmarketcap. Because we observed this same phenomenon in Coingecko's reporting of market cap in the last section, we speculate that this variance may come from Coingecko's source for information about DGB rather than Coingecko's reporting of this information.
 
 
 ### Volume
 ![BTC_volume](/data_analysis/BTC_volume.png)
+
 ![DGB_volume](/data_analysis/DGB_volume.png)
+
 ![BTM_Volume](/data_analysis/BTM_Volume.png)
+
 ![ADX_volume](/data_analysis/ADX_volume.png)
+
 ![ARPA_volume](/data_analysis/ARPA_volume.png)
+
+
+It is harder to identify trends in the volume graphs because it is only for DGB that both sites seem to report the same volumes on average. For BTM and ADX, Coingecko reports higher volumes on average than Coinmarketcap does. For ARPA and BTC, Coinmarketcap reports higher volumes on average than Coingecko does. As a result of this, we cannot speculate that one site reports higher volumes on average, but we also cannot speculate that the sites report the same volumes on average. Still, it is also important to look at variance in these graphs. For all coins but BTC, Coinmarketcap's reporting of volume has higher variance than that of Coingecko. This is especially true for BTM.
+
+
 ## Detecting Associations
 The currencies on these sites are ranked by market capitalization. However, market cap is only one of the several most important metrics for cryptocurrency. Arguably, volume and circulating supply are just as salient as market cap. As a result, it's important to know whether, and if so, the extent to which we can use market cap-based rankings by coinmarketcap and coingecko to proxy for volume and circulating supply. 
 
