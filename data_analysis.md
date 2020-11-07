@@ -85,23 +85,37 @@ Having established through summary statistics that the sites' reporting varies o
 
 We now examine market cap, price, and volume in turn by looking to these graphs.
 
-#### Market Cap
+### Market Cap
 ![BTC_mc](/data_analysis/BTC_mc.png)
+
 ![DGB_mc](/data_analysis/DGB_mc.png)
+
 ![BTM_mc](/data_analysis/BTM_mc.png)
+
 ![ADX_mc](/data_analysis/ADX_mc.png)
+
 ![ARPA_mc](/data_analysis/ARPA_mc.png)
+
 
 Scrolling through these graphs, we notice some variation. For BTC and ADX, Coingecko and Coinmarketcap report roughly the same market cap values over the 48 hours of interest. The DGB graph illustrates that for this coin, Coingecko and Coinmarketcap report very similar market cap values on average, but that there is a higher variance in Coingecko's reporting of market cap. While these 3 graphs suggest that Coingecko and Coinmarketcap report the same market caps on average for given coins, the graphs for BTM and ARPA suggest that Coingecko reports a higher market cap on average for a given coin than Coinmarketcap does. It is reasonable to infer from these graphs that on average, Coingecko's reported market cap values will be either higher than or the same as those reported by Coinmarketcap.
 
-#### Price
+
+### Price
 ![BTC_price](/data_analysis/BTC_price.png)
+
 ![DGB_price](/data_analysis/DGB_price.png)
+
 ![BTM_price](/data_analysis/BTM_price.png)
+
 ![ADX_price](/data_analysis/ADX_price.png)
+
 ![ARPA_price](/data_analysis/ARPA_price.png)
 
-#### Volume
+
+The graphs for price are more uniform than those for market cap. This is to be expected because price is much simpler than marketcap is. For each of these coins, the two sites report roughly the same prices on average over the 48 hour period. There is little variation in reported prices for BTC, BTM, ADX, and ARPA. The DGB graph is slightly different- while the sites report the roughly same prices on average, there is more variation in Coingecko's reporting than there is in that of Coinmarketcap. We observed this same phenomenon in  
+
+
+### Volume
 ![BTC_volume](/data_analysis/BTC_volume.png)
 ![DGB_volume](/data_analysis/DGB_volume.png)
 ![BTM_Volume](/data_analysis/BTM_Volume.png)
