@@ -63,24 +63,39 @@ Having established through summary statistics that the sites' reporting varies o
 
 - For BTC:
   - Price: [BTC_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTC_price.png)
+  ![BTC_price](/data_analysis/BTC_price.png)
   - Market Cap: [BTC_mc.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTC_mc.png)
+  ![BTC_mc](/data_analysis/BTC_mc.png)
   - Volume: [BTC_volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTC_volume.png)
+  ![BTC_volume](/data_analysis/BTC_volume.png)
 - For DGB:
   - Price: [DGB_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/DGB_price.png)
+  ![DGB_price](/data_analysis/DGB_price.png)
   - Market Cap: [DGB_mc.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/DGB_mc.png)
+  ![DGB_mc](/data_analysis/DGB_mc.png)
   - Volume: [DGB_volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/DGB_volume.png)
+  ![DGB_volume](/data_analysis/DGB_volume.png)
 - For BTM:
   - Price: [BTM_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTM_price.png)
+  ![BTM_price](/data_analysis/BTM_price.png)
   - Market Cap: [BTM_mc.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTM_mc.png)
+  ![BTM_mc](/data_analysis/BTM_mc.png)
   - Volume: [BTM_Volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTM_Volume.png)
+  ![BTM_Volume](/data_analysis/BTM_Volume.png)
 - For ADX:
   - Price: [ADX_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ADX_price.png)
+  ![BTC_price](/data_analysis/BTC_price.png)
   - Market Cap: [ADX_mc.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ADX_mc.png)
+  ![BTC_price](/data_analysis/BTC_price.png)
   - Volume: [ADX_volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ADX_volume.png)
+  ![BTC_price](/data_analysis/BTC_price.png)
 - For ARPA:
   - Price: [ARPA_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ARPA_price.png)
+  ![BTC_price](/data_analysis/BTC_price.png)
   - Market Cap: [ARPA_mc.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ARPA_mc.png)
+  ![BTC_price](/data_analysis/BTC_price.png)
   - Volume: [ARPA_volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ARPA_volume.png)
+  ![BTC_price](/data_analysis/BTC_price.png)
 
 I don't include all of the charts here because they would take up too much space, but in order to discuss the charts, we show representative examples from 
 
