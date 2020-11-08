@@ -248,7 +248,7 @@ The resultant graphs are:
 
 These graphs are examined and analyzed in [data_analysis.md](https://github.com/cbouts/midterm_project/blob/main/data_analysis.md).
 
-
-
+#### Step 5D:
+Look for associations between market cap (the indicator that the sites use to create their rankings) and volume and supply with linear regression by running [linear_regression.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/linear_regression.py). For each website (represented by each CSV, [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv) and [gecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/gecko_dataset.csv)), the file uses market cap as data (x values) and regresses price and volume on market cap with a linear regression machine. The results of these regressions (coefficients and intercepts) are printed in the terminal, and they are presented and analyzed in [data_analysis.md](https://github.com/cbouts/midterm_project/blob/main/data_analysis.md).
 
 
