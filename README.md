@@ -192,7 +192,12 @@ if len(tables)==19:
 			print(" ERROR: WEBSITE HAS INCOMPLETE DATA FOR " + one_file_name.replace(".html",""))
 ```
 The deep link htmls downloaded in such a way that some have all rows in one order within one tbody, but others have four tbodies containing the same rows in a different order. This is the reason for the "if/else" structure- some have a table length of 19, while others have a different length. Within each of these groups of htmls, some coins have incomplete data listed. This program skips over them and notes them in the terminal with an error message. This is the reason for the try/except structure.
-Like in the other parse files, if you are interested in different information, you can delete some information or add other information by examining the files you've downloaded and following the structure I've used to incorporate the information in your code.
+
+Like in the other parse files, if you are interested in parsing different information, you can delete some information or add other information by examining the files you've downloaded and following the structure I've used to incorporate the information in your code.
+
+The resultant csv is found here: [cmc_deeplink.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_deeplink.csv). (Note that we've since moved it to the data_analysis folder because it is easier to use for analysis if it's in this folder.)
 
 ### Step 5: 
-Analyze the data on the 3 csvs. Run cleaning.py --- to determine how much data for each variable is missing. Using the CSVs, create Excel graphs to show differences in ----
+Create a new folder, [data_analysis](https://github.com/cbouts/midterm_project/tree/main/data_analysis). We will now analyze the data on the 3 csvs, so we move them into the new folder because this is where we will be using them. 
+#### Step 5A:
+Run cleaning.py --- to determine how much data for each variable is missing. Using the CSVs, create Excel graphs to show differences in ----
