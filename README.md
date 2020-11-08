@@ -45,7 +45,7 @@ Of course, this can be adapted to fit your needs as is illustrated here:
 
 Once you've configured the program to match your needs, you simply run it and monitor the terminal output for errors which will be printed without interrupting the program's progress due to the file's "try/except/else" format.
 ### Step 2: 
-Parse the data for the two websites by running parse files.
+Parse the data.
 #### Step 2A:
 Run [coingecko_parse.py](https://github.com/cbouts/midterm_project/blob/main/coingecko_parse.py). This creates the folder 'coingecko_parsed_files' which will hold our new coingecko csv:
 ```
@@ -77,7 +77,8 @@ df = df.append({
 These were the indicators I was most interested in, but you can delete some or add some by looking at one of the json files you've downloaded to find the name of the new category of information you're interested in and using the structure `'indicator': coin['indicator']` to add the new information to the `df.append` funciton. 
 
 After looping through all coins in all the Coingecko json files, it exports the dataframe to our new csv:
-`df.to_csv('coingecko_parsed_files/coingecko_dataset.csv')`. 
+`df.to_csv('coingecko_parsed_files/coingecko_dataset.csv')`. This csv is here: [coingecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/coingecko_dataset.csv). (Note that we've since moved it to the data_analysis folder because it is easier to use for analysis if it's in this folder.)
+
 
 #### Step 2B:
 Run [cmcap_parse.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_parse.py). This creates the folder 'cmc_parsed_files' which will hold our new coingecko csv:
@@ -107,8 +108,38 @@ df = df.append({
 ```
 After looping through all coins in all the Coinmarketcap html files, it exports the composite dataframe to our new csv:
 `df.to_csv('coingecko_parsed_files/cmc_dataset.csv')`. 
+This csv is here: [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv). (Note that we've since moved it to the data_analysis folder because it is easier to use for analysis if it's in this folder.)
 
 ### Step 3: 
-Run - with the coinmarketcap parsed data to request deep link information for each coin that features on the top 500 list over the time period of interest.
+Run [cmcap_deeplink.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_deeplink.py) to request deep link information from coinmarketcap for each coin that features on the top 500 list over the time period of interest. This file first creates the file that will hold these html files:
+```
+if not os.path.exists("deep_link_html"):
+	os.mkdir("deep_link_html")
+```
+Next, the file reads [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv). Again, I've included `context = ssl._create_unverified_context()` and `context=context`, but you may be able to omit these.
+```
+df = pd.read_csv("cmc_parsed_files/cmc_dataset.csv")
+
+context = ssl._create_unverified_context()
+```
+It loops through the links to deep link information for each coin on the csv, and writes information about these coins into html files unless the deep link file for that coin already exists. This ensures that we get only one deep link file per coin. These html files are first written with .temp, which is only removed from the name once everything has been written correctly. A sleep time of 30 seconds occurs after each download to prevent issues with the website. 
+```
+for link in df['link']:
+	filename = link.replace('/currencies/', '')
+	if os.path.exists("deep_link_html/" + filename + ".html"):
+		print(filename + ".html already exists.")
+	else:
+		print("downloading " + link)
+		response = urllib.request.urlopen("https://coinmarketcap.com/" + link, context=context)
+		html = response.read()
+		f = open('deep_link_html/' + filename + '.html.temp', 'wb')
+		f.write(html)
+		f.close()
+		os.rename("deep_link_html/" + filename + '.html.temp', 'deep_link_html/' + filename + '.html')
+		time.sleep(30)
+```
+The resultant csv can be found here: [cmc_deeplink.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_deeplink.csv).
+
+
 4. Step 4: Run the deep link parse file to parse the deep link information to a new csv called -
 5. Step 5: Analyze the data on the 3 csvs. Run cleaning.py --- to determine how much data for each variable is missing. Using the CSVs, create Excel graphs to show differences in ----
