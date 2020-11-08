@@ -1,9 +1,25 @@
 # ECON4980 Midterm Project
 
 ## Contents
-* [Introduction](#Introduction)
-* [Technologies](#Technologies)
-* [Installation](#Installation)
+- [Introduction](#introduction)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Usage](#usage)
+  * [Step 1:](#step-1-)
+  * [Step 2:](#step-2-)
+    + [Step 2A:](#step-2a-)
+    + [Step 2B:](#step-2b-)
+  * [Step 3:](#step-3-)
+  * [Step 4:](#step-4-)
+  * [Step 5:](#step-5-)
+    + [Step 5A:](#step-5a-)
+    + [Step 5B:](#step-5b-)
+    + [Step 5C:](#step-5c-)
+    + [Step 5D:](#step-5d-)
+    + [Step 5E:](#step-5e-)
+  * [Step 6 (BONUS):](#step-6--bonus--)
+    + [Step 6A:](#step-6a-)
+    + [Step 6B:](#step-6b-)
 
 ## Introduction
 This project downloads and parses salient data on the top 500 cryptocurrencies (ranked by market capitalization) from the websites [coinmarketcap](coinmarketcap.com) and [coingecko](coingecko.com) 192 times over a 48 hour time period. It uses these data to analyze differences in reporting between the two sites. As a bonus, the project also requests and attempts to parse historical data from these websites for the year between November 1, 2019 and November 1, 2020. 
