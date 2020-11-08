@@ -47,12 +47,12 @@ Once you've configured the program to match your needs, you simply run it and mo
 ### Step 2: 
 Parse the data for the two websites by running parse files.
 #### Step 2A:
-Run [coingecko_parse.py](https://github.com/cbouts/midterm_project/blob/main/coingecko_parse.py). This creates the folder 'coingecko_parsed_files' with the lines which will hold our new coingecko csv:
+Run [coingecko_parse.py](https://github.com/cbouts/midterm_project/blob/main/coingecko_parse.py). This creates the folder 'coingecko_parsed_files' which will hold our new coingecko csv:
 ```
 if not os.path.exists('coingecko_parsed_files'):
 	os.mkdir('coingecko_parsed_files')
 ```
-It then loops through the files in the json_files folder (the folder which contains all json files from downloading Coingecko). It creates a dataframe for each coin in each file, appending key information to this dataframe with:
+It then loops through the files in the json_files_2 folder (the folder which contains all json files from downloading Coingecko). It creates a dataframe for each coin in each file, appending key information to this dataframe with:
 ```
 df = df.append({
         .........
@@ -62,7 +62,21 @@ After looping through all coins in all the Coingecko json files, it exports the 
 `df.to_csv('coingecko_parsed_files/coingecko_dataset.csv')`. 
 
 #### Step 2B:
-Run [cmcap_parse.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_parse.py). 
-3. Step 3: Run - with the coinmarketcap parsed data to request deep link information for each coin that features on the top 500 list over the time period of interest.
+Run [cmcap_parse.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_parse.py). This creates the folder 'cmc_parsed_files' which will hold our new coingecko csv:
+```
+if not os.path.exists("cmc_parsed_files"):
+	os.mkdir("cmc_parsed_files")
+```
+It then loops through the files in the html_files_2 folder (the folder which contains all json files from downloading Coingecko). Within this for loop, there is a for loop that causes the program to loop through every row (representing every coin) in the current file. The for loop then picks up key information about the coins and appends this information to a dataframe with:
+```
+df = df.append({
+        	.........
+			}, ignore_index=True)
+```
+After looping through all coins in all the Coinmarketcap html files, it exports the composite dataframe to our new csv:
+`df.to_csv('coingecko_parsed_files/cmc_dataset.csv')`. 
+
+### Step 3: 
+Run - with the coinmarketcap parsed data to request deep link information for each coin that features on the top 500 list over the time period of interest.
 4. Step 4: Run the deep link parse file to parse the deep link information to a new csv called -
 5. Step 5: Analyze the data on the 3 csvs. Run cleaning.py --- to determine how much data for each variable is missing. Using the CSVs, create Excel graphs to show differences in ----
