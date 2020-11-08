@@ -253,6 +253,7 @@ Look for associations between market cap (the indicator that the sites use to cr
 
 
 ### Step 6 (BONUS):
+#### Step 6A:
 Request 1 year of historical data for each site by running the file [historical_request_2.py](https://github.com/cbouts/midterm_project/blob/main/historical_request_2.py). 
 
 As in the first request file, I include `context = ssl._create_unverified_context()` and `context=context`, but you may not need to include these. Additionally, this file requests the most important historical data from Coingecko using API and from Coinmarketcap using screen scraping. First, the file creates the folders which will hold historical html files from Coinmarketcap and the historical json files from Coingecko: 
@@ -281,7 +282,12 @@ The file currently requests data from 11/01/2019-11/01/2020. This is fairly stra
 
 When you've made all adjustments, run the code and monitor the terminal output for errors.
 
-I wrote parse files for the historical data from each site, but I could not get them to work after hours of trying. The parse file for coinmarketcap is incomplete. 
+#### Step 6B:
+Parse the files.
 
-Because I couldn't parse this data, I included the html and json files in the folders --- and ----.
+I wrote parse files for the historical data from each site, but I could not get them to run after hours of trying. These are the parse files:
+- (cmcap_historical_parse_4.py)[https://github.com/cbouts/midterm_project/blob/main/cmcap_historical_parse_4.py]
+- (historical_parse_gecko.py)[https://github.com/cbouts/midterm_project/blob/main/historical_parse_gecko.py]
+
+Because I couldn't parse this data, I included the html and json files in the folders [historical_html_files](https://github.com/cbouts/midterm_project/tree/main/historical_html_files) and (historical_json_files)[https://github.com/cbouts/midterm_project/tree/main/historical_json_files].
 
