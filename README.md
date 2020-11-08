@@ -21,10 +21,9 @@ To run this project, you will need to install it on your computer. To do this, w
 in the terminal.
 
 ## Usage
-Running this projects takes - steps. They are listed and elaborated here.
+Running this project takes 6 main steps. They are listed and elaborated here.
 
 ### Step 1:
-
 Request data by running [cmcap_coingecko_request.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_coingecko_request.py). This file requests the most important data from Coingecko using API and from Coinmarketcap using screen scraping. First, the file creates the folders which will hold html files from Coinmarketcap and the json files from Coingecko: 
 ```
 if not os.path.exists("html_files_2"):
@@ -44,6 +43,7 @@ Of course, this can be adapted to fit your needs as is illustrated here:
 - Manipulating these `time.sleep()` and `for i in range():` lines allows you to change the length of the time period of interest, as well as the frequency of your observations.For example, changing `time.sleep(840)` to `time.sleep(540)` while also changing `for i in range(192):` to `for i in range(6):` will yield 6 downloads of the site 10 minutes apart over a 1 hour time period.
 
 Once you've configured the program to match your needs, you simply run it and monitor the terminal output for errors which will be printed without interrupting the program's progress due to the file's "try/except/else" format.
+
 ### Step 2: 
 Parse the data.
 #### Step 2A:
@@ -140,7 +140,7 @@ for link in df['link']:
 ```
 The resultant csv can be found here: [cmc_deeplink.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_deeplink.csv).
 
-4. Step 4: 
+### Step 4: 
 Parse the deep link information by running [cmcap_deeplink_parse.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_deeplink_parse.py). The file first creates the file that will hold the new csv of deep link information if it does not already exist:
 ```
 if not os.path.exists("cmc_parsed_files"):
@@ -211,7 +211,6 @@ Run [summary_statistics.py](https://github.com/cbouts/midterm_project/blob/main/
   - [price_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/price_gecko.csv)
   - [volume_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/volume_gecko.csv)
   - [market_cap_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_gecko.csv)
-
 #### Step 5C:
 Using the 6 new CSVs from step 5B, create graphs in Excel to show differences in mean market caps, prices, and volumes between the two sites. The new graphs are
 - [Means__Prices_1.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/Means_Prices_1.png)
@@ -221,7 +220,6 @@ Using the 6 new CSVs from step 5B, create graphs in Excel to show differences in
 - [Means_Market_Cap.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/Means_Market_Cap.png)
 
 These graphs are analyzed in [data_analysis.md](https://github.com/cbouts/midterm_project/blob/main/data_analysis.md).
-
 #### Step 5D:
 Make use of the time dimension of our data by using [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv) and [gecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/gecko_dataset.csv) to make graphs in Excel tracking each site's reportings of price, volume, and market cap over the 48 hour time period for the coins Bitcoin (BTC, ranked first by market cap), Digibyte (DGB, ranked around 50th by market cap), Bytom (BTM, ranked around 100th by market cap), AdEx (ADX, ranked around 200th by market cap), and ARPA Chain (ARPA, ranked around 300th by market cap).
 The resultant graphs are:
@@ -247,8 +245,29 @@ The resultant graphs are:
   - Volume: [ARPA_volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ARPA_volume.png)
 
 These graphs are examined and analyzed in [data_analysis.md](https://github.com/cbouts/midterm_project/blob/main/data_analysis.md).
-
-#### Step 5D:
+#### Step 5E:
 Look for associations between market cap (the indicator that the sites use to create their rankings) and volume and supply with linear regression by running [linear_regression.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/linear_regression.py). For each website (represented by each CSV, [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv) and [gecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/gecko_dataset.csv)), the file uses market cap as data (x values) and regresses price and volume on market cap with a linear regression machine. The results of these regressions (coefficients and intercepts) are printed in the terminal, and they are presented and analyzed in [data_analysis.md](https://github.com/cbouts/midterm_project/blob/main/data_analysis.md).
 
+### Step 6 (BONUS):
+Request 1 year of historical data for each site by running the file [historical_request_2.py](https://github.com/cbouts/midterm_project/blob/main/historical_request_2.py). 
+
+data by running [cmcap_coingecko_request.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_coingecko_request.py). This file requests the most important data from Coingecko using API and from Coinmarketcap using screen scraping. First, the file creates the folders which will hold html files from Coinmarketcap and the json files from Coingecko: 
+```
+if not os.path.exists("html_files_2"):
+	os.mkdir("html_files_2")
+
+if not os.path.exists("json_files_2"):
+	os.mkdir("json_files_2")
+```
+On my computer, I need to include the next line because I get an "unverified" error if I do not. However, many people successfully omit this from their code: `context = ssl._create_unverified_context()`. We write this unverified context after each of our URLs to prevent the error: `context=context`. 
+
+In its current form, the file requests data at 15 minute intervals for the 48 hour time period of interest, resulting in (4 downloads per hour) * (48 hours) = 192 download processes reflected in the beginning for the for loop: `for i in range(192):`. The file then requests the first page of 100 coins from coinmarketcap, the first 250 coins from coingecko, sleeps for 15 seconds, requests the second page of 100 coins from coinmarketcap and coins 250-500 from coingecko, sleeps for 15 seconds, then requests pages 3-5 (coins 300-500) from coinmarketcap (with sleep time of 15 seconds between these requests). After this, the program sleeps for 840 seconds. 
+
+Of course, this can be adapted to fit your needs as is illustrated here:
+- To get a different number of observations, you can change 192 to another number in this line of code:
+`for i in range(192):`
+- The 15 minute intervals are regulated by the 4 lines of code that say `time.sleep(15)` and the one line that says `time.sleep(840)`. Including 4 time.sleep periods of 15 seconds each throughout the program and 1 long 840 second time.sleep period yields 900 total seconds of sleep between the start of one round of downloads and the start of the next round. Note that you should always include some sleep time after your downloads in order to avoid breaking or getting banned from the sites.
+- Manipulating these `time.sleep()` and `for i in range():` lines allows you to change the length of the time period of interest, as well as the frequency of your observations.For example, changing `time.sleep(840)` to `time.sleep(540)` while also changing `for i in range(192):` to `for i in range(6):` will yield 6 downloads of the site 10 minutes apart over a 1 hour time period.
+
+Once you've configured the program to match your needs, you simply run it and monitor the terminal output for errors which will be printed without interrupting the program's progress due to the file's "try/except/else" format.
 
