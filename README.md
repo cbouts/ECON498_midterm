@@ -213,4 +213,10 @@ Run [summary_statistics.py](https://github.com/cbouts/midterm_project/blob/main/
   - [market_cap_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_gecko.csv)
 
 #### Step 5C:
-Using [coingecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/coingecko_dataset.csv) and [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv), create Excel graphs to show differences in --
+Using the 6 new CSVs from step 5B, create graphs in Excel to show differences in mean market caps, prices, and volumes between the two sites. The new graphs are
+- [Means__Prices_1.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/Means_Prices_1.png)
+- [Mean_Price_2.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/Mean_Price_2.png)
+- [Mean_Volumes_1.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/Mean_Volumes_1.png)
+- [Mean_Volumes_2.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/Mean_Volumes_2.png)
+- [Means_Market_Cap.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/Means_Market_Cap.png)
+These graphs are analyzed in [data_analysis.md](https://github.com/cbouts/midterm_project/blob/main/data_analysis.md).
