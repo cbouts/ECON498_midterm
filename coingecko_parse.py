@@ -7,7 +7,6 @@ if not os.path.exists('coingecko_parsed_files'):
 	os.mkdir('coingecko_parsed_files')
 
 df = pd.DataFrame()
-# will need to change the source folder in the line below:
 for json_file_name in glob.glob('json_files_2/*.json'):
 # json_file_name = 'json_files_trial/coingecko20201101164950.json'
 	print("parsing" + json_file_name)

@@ -8,17 +8,6 @@ if not os.path.exists("cmc_parsed_files"):
 
 df = pd.DataFrame()
 
-# # for trying to print things, uncomment this: 
-# one_file_name = "html_files_trial/cmcap20201101164950.html"
-# scrape_time = os.path.basename(one_file_name).replace("cmcap", "").replace("copy.html","")
-# f = open(one_file_name, "r")
-# soup = BeautifulSoup(f.read(), "html.parser")
-# f.close()
-# currencies_table = soup.find("tbody")
-# currency_rows = currencies_table.find_all("tr")
-# currency_columns = currency_rows[0].find_all("td")
-# print()
-
 
 for one_file_name in glob.glob("html_files_2/*.html"):
 	print(one_file_name)

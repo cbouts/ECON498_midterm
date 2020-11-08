@@ -21,10 +21,13 @@ cmcap_request.py
 coingecko_request.py
 
 deep_link_html
-historical_html_files
-historical_json_files
+
 
 historical_html_trial
 historical_json_trial
 
 historical_request.py
+
+historical_parse_cmc.py
+historicalcmc_parse_2.py
+historical_cmc_parse_3.py

@@ -8,9 +8,8 @@ if not os.path.exists("deep_link_html"):
 	os.mkdir("deep_link_html")
 
 df = pd.read_csv("cmc_parsed_files/cmc_dataset.csv")
-# make sure you have the right csv here.
 
-print(df['link'])
+# print(df['link'])
 context = ssl._create_unverified_context()
 
 for link in df['link']:
