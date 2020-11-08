@@ -55,9 +55,27 @@ if not os.path.exists('coingecko_parsed_files'):
 It then loops through the files in the json_files_2 folder (the folder which contains all json files from downloading Coingecko). It creates a dataframe for each coin in each file, appending key information to this dataframe with:
 ```
 df = df.append({
-        .........
-			}, ignore_index=True)
+      		'id': coin['id'],
+		'time': scrape_time,
+	      	'symbol': coin['symbol'],
+		'name': coin['name'],
+		'logo': coin['image'],
+		'current_price': coin['current_price'],
+		'market_cap': coin['market_cap'],
+		'market_cap_rank': coin['market_cap_rank'],
+		'total_volume': coin['total_volume'],
+		'circulating_supply': coin['circulating_supply'],
+		'total_supply': coin['total_supply'],
+		'max_supply': coin['max_supply'],
+		'ath': coin['ath'],
+		'ath_date': coin['ath_date'],
+		'atl': coin['atl'],
+		'atl_date': coin['atl_date'],
+		'roi': coin['roi']
+	}, ignore_index=True)
 ```
+These were the indicators I was most interested in, but you can delete some or add some by looking at one of the json files you've downloaded to find the name of the new category of information you're interested in and using the structure `'indicator': coin['indicator']` to add the new information to the `df.append` funciton. 
+
 After looping through all coins in all the Coingecko json files, it exports the dataframe to our new csv:
 `df.to_csv('coingecko_parsed_files/coingecko_dataset.csv')`. 
 
@@ -67,7 +85,21 @@ Run [cmcap_parse.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_p
 if not os.path.exists("cmc_parsed_files"):
 	os.mkdir("cmc_parsed_files")
 ```
-It then loops through the files in the html_files_2 folder (the folder which contains all json files from downloading Coingecko). Within this for loop, there is a for loop that causes the program to loop through every row (representing every coin) in the current file. The for loop then picks up key information about the coins and appends this information to a dataframe with:
+It then loops through and reads the files in the html_files_2 folder (the folder which contains all json files from downloading Coingecko). Within this for loop, there is a for loop that causes the program to loop through every row (representing every coin) in the current file. The for loop then picks up key information about the coins with 
+```
+currency_name = currency_columns[2].find("p").text
+currency_symbol = currency_columns[2].find("p", {"class": "coin-item-symbol"}).text
+currency_price = currency_columns[3].find("a").text.replace("$","").replace(",","")
+currency_marketcap = currency_columns[6].find("p").text.replace("$","").replace(",","")
+currency_trading_volume_inUSD = currency_columns[7].find("a").text.replace("$","").replace(",","")
+currency_circulating_supply = currency_columns[8].find("p").text.replace("" " + currency_symbol","").replace("$","").replace(",","")
+currency_trading_volume_inCurrency = currency_columns[7].find("p", {"class": "Text-sc-1eb5slv-0 jicUsX"}).text.replace(",","")
+currency_link = currency_columns[2].find("a")["href"]
+currency_logo = currency_columns[2].find("a").find('img')
+```
+These were the indicators I was most interested in, but you can delete some or add some by examining the coinmarketcap.com site, inspecting the table of information, and following the structure I've laid out in my examples above to include the new variables in the code. 
+
+The file then appends this information to a dataframe with:
 ```
 df = df.append({
         	.........
