@@ -32,7 +32,7 @@ if not os.path.exists("html_files_2"):
 if not os.path.exists("json_files_2"):
 	os.mkdir("json_files_2")
 ```
-On my computer, I need to include the next line because I get an "unverified" error if I do not. However, many people successfully omit this from their code: `context = ssl._create_unverified_context()`. We write this unverified context after each of our URLs to prevent the error: `context=context`. 
+On my computer, I need to include the line `context = ssl._create_unverified_context()` and write `context=context` after each URL to prevent an "unverified" error. However, many people successfully omit this from their code.
 
 In its current form, the file requests data at 15 minute intervals for the 48 hour time period of interest, resulting in (4 downloads per hour) * (48 hours) = 192 download processes reflected in the beginning for the for loop: `for i in range(192):`. The file then requests the first page of 100 coins from coinmarketcap, the first 250 coins from coingecko, sleeps for 15 seconds, requests the second page of 100 coins from coinmarketcap and coins 250-500 from coingecko, sleeps for 15 seconds, then requests pages 3-5 (coins 300-500) from coinmarketcap (with sleep time of 15 seconds between these requests). After this, the program sleeps for 840 seconds. 
 
@@ -43,6 +43,7 @@ Of course, this can be adapted to fit your needs as is illustrated here:
 - Manipulating these `time.sleep()` and `for i in range():` lines allows you to change the length of the time period of interest, as well as the frequency of your observations.For example, changing `time.sleep(840)` to `time.sleep(540)` while also changing `for i in range(192):` to `for i in range(6):` will yield 6 downloads of the site 10 minutes apart over a 1 hour time period.
 
 Once you've configured the program to match your needs, you simply run it and monitor the terminal output for errors which will be printed without interrupting the program's progress due to the file's "try/except/else" format.
+
 
 ### Step 2: 
 Parse the data.
@@ -79,7 +80,6 @@ These were the indicators I was most interested in, but you can delete some or a
 After looping through all coins in all the Coingecko json files, it exports the dataframe to our new csv:
 `df.to_csv('coingecko_parsed_files/coingecko_dataset.csv')`. This csv is here: [coingecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/coingecko_dataset.csv). (Note that we've since moved it to the data_analysis folder because it is easier to use for analysis if it's in this folder.)
 
-
 #### Step 2B:
 Run [cmcap_parse.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_parse.py). This creates the folder 'cmc_parsed_files' which will hold our new coingecko csv:
 ```
@@ -110,6 +110,7 @@ After looping through all coins in all the Coinmarketcap html files, it exports 
 `df.to_csv('coingecko_parsed_files/cmc_dataset.csv')`. 
 This csv is here: [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv). (Note that we've since moved it to the data_analysis folder because it is easier to use for analysis if it's in this folder.)
 
+
 ### Step 3: 
 Run [cmcap_deeplink.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_deeplink.py) to request deep link information from coinmarketcap for each coin that features on the top 500 list over the time period of interest. This file first creates the file that will hold these html files:
 ```
@@ -139,6 +140,7 @@ for link in df['link']:
 		time.sleep(30)
 ```
 The resultant csv can be found here: [cmc_deeplink.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_deeplink.csv).
+
 
 ### Step 4: 
 Parse the deep link information by running [cmcap_deeplink_parse.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_deeplink_parse.py). The file first creates the file that will hold the new csv of deep link information if it does not already exist:
@@ -197,6 +199,7 @@ Like in the other parse files, if you are interested in parsing different inform
 
 The resultant csv is found here: [cmc_deeplink.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_deeplink.csv). (Note that we've since moved it to the data_analysis folder because it is easier to use for analysis if it's in this folder.)
 
+
 ### Step 5: 
 Create a new folder, [data_analysis](https://github.com/cbouts/midterm_project/tree/main/data_analysis). We will now analyze the data on the 3 csvs, so we move them into the new folder because this is where we will be using them. A detailed write-up about the processes used and analysis completed in this step is available at [data_analysis.md](https://github.com/cbouts/midterm_project/blob/main/data_analysis.md).
 #### Step 5A:
@@ -248,18 +251,33 @@ These graphs are examined and analyzed in [data_analysis.md](https://github.com/
 #### Step 5E:
 Look for associations between market cap (the indicator that the sites use to create their rankings) and volume and supply with linear regression by running [linear_regression.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/linear_regression.py). For each website (represented by each CSV, [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv) and [gecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/gecko_dataset.csv)), the file uses market cap as data (x values) and regresses price and volume on market cap with a linear regression machine. The results of these regressions (coefficients and intercepts) are printed in the terminal, and they are presented and analyzed in [data_analysis.md](https://github.com/cbouts/midterm_project/blob/main/data_analysis.md).
 
+
 ### Step 6 (BONUS):
 Request 1 year of historical data for each site by running the file [historical_request_2.py](https://github.com/cbouts/midterm_project/blob/main/historical_request_2.py). 
 
-data by running [cmcap_coingecko_request.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_coingecko_request.py). This file requests the most important data from Coingecko using API and from Coinmarketcap using screen scraping. First, the file creates the folders which will hold html files from Coinmarketcap and the json files from Coingecko: 
+As in the first request file, I include `context = ssl._create_unverified_context()` and `context=context`, but you may not need to include these. Additionally, this file requests the most important historical data from Coingecko using API and from Coinmarketcap using screen scraping. First, the file creates the folders which will hold historical html files from Coinmarketcap and the historical json files from Coingecko: 
 ```
-if not os.path.exists("html_files_2"):
-	os.mkdir("html_files_2")
+if not os.path.exists("historical_html_files"):
+	os.mkdir("historical_html_files")
 
-if not os.path.exists("json_files_2"):
-	os.mkdir("json_files_2")
+if not os.path.exists("historical_json_files"):
+	os.mkdir("historical_json_files")
 ```
-On my computer, I need to include the next line because I get an "unverified" error if I do not. However, many people successfully omit this from their code: `context = ssl._create_unverified_context()`. We write this unverified context after each of our URLs to prevent the error: `context=context`. 
+Unlike the first request file, this file is requesting historical data for a pre-determined list of coins- that is, the coins that featured in the list of the top 500 coins during the 48 hour download period. To get and use this list of coins, we use the the dataset [cmc_deeplink.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_deeplink.csv). Before you do this, you need to move the csv back out of the data_analysis folder so that it is at the same level as the file. The next lines of code read the csv and find the names of the coins we will be requesting historical data for.
+```
+col_list = ["ath", "atl", "market_rank", "max_supply", "name", "roi", "total_supply"]
+df_1 = pd.read_csv('cmc_parsed_files/cmc_deeplink.csv', usecols=col_list)
+df_2 = df_1["name"]
+```
+The next lines create a for loop that will be used for the rest of file to iterate through the coins and manipulate the names of the coins to fit into the request URLs for each coin on each site.
+```
+for row in df_2:
+	name = row
+	geckolink = row.replace("-","%20")
+```
+
+
+___________
 
 In its current form, the file requests data at 15 minute intervals for the 48 hour time period of interest, resulting in (4 downloads per hour) * (48 hours) = 192 download processes reflected in the beginning for the for loop: `for i in range(192):`. The file then requests the first page of 100 coins from coinmarketcap, the first 250 coins from coingecko, sleeps for 15 seconds, requests the second page of 100 coins from coinmarketcap and coins 250-500 from coingecko, sleeps for 15 seconds, then requests pages 3-5 (coins 300-500) from coinmarketcap (with sleep time of 15 seconds between these requests). After this, the program sleeps for 840 seconds. 
 
