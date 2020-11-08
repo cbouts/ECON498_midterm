@@ -32,7 +32,7 @@ Request data by running [cmcap_coingecko_request.py](https://github.com/cbouts/m
 - Manipulating these `time.sleep()` and `for i in range():` lines allows you to change the length of the time period of interest, as well as the frequency of your observations. 
 
 ### Step 2: 
-Parse the data for the two websites using the parse files ___ and _ . 
+Parse the data for the two websites by running the parse files [coingecko_parse.py](https://github.com/cbouts/midterm_project/blob/main/coingecko_parse.py) and [cmcap_parse.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_parse.py). 
 3. Step 3: Run - with the coinmarketcap parsed data to request deep link information for each coin that features on the top 500 list over the time period of interest.
 4. Step 4: Run the deep link parse file to parse the deep link information to a new csv called -
 5. Step 5: Analyze the data on the 3 csvs. Run cleaning.py --- to determine how much data for each variable is missing. Using the CSVs, create Excel graphs to show differences in ----
