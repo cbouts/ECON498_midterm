@@ -200,4 +200,6 @@ The resultant csv is found here: [cmc_deeplink.csv](https://github.com/cbouts/mi
 ### Step 5: 
 Create a new folder, [data_analysis](https://github.com/cbouts/midterm_project/tree/main/data_analysis). We will now analyze the data on the 3 csvs, so we move them into the new folder because this is where we will be using them. 
 #### Step 5A:
-Run cleaning.py --- to determine how much data for each variable is missing. Using the CSVs, create Excel graphs to show differences in ----
+Run [cleaning.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cleaning.py) --- to determine how much data for each variable is missing. 
+#### Step 5B:
+Using [coingecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/coingecko_dataset.csv) and [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv), create Excel graphs to show differences in --
