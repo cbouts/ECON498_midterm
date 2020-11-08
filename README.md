@@ -219,4 +219,36 @@ Using the 6 new CSVs from step 5B, create graphs in Excel to show differences in
 - [Mean_Volumes_1.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/Mean_Volumes_1.png)
 - [Mean_Volumes_2.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/Mean_Volumes_2.png)
 - [Means_Market_Cap.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/Means_Market_Cap.png)
+
 These graphs are analyzed in [data_analysis.md](https://github.com/cbouts/midterm_project/blob/main/data_analysis.md).
+
+#### Step 5D:
+Make use of the time dimension of our data by using [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv) and [gecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/gecko_dataset.csv) to make graphs in Excel tracking each site's reportings of price, volume, and market cap over the 48 hour time period for the coins Bitcoin (BTC, ranked first by market cap), Digibyte (DGB, ranked around 50th by market cap), Bytom (BTM, ranked around 100th by market cap), AdEx (ADX, ranked around 200th by market cap), and ARPA Chain (ARPA, ranked around 300th by market cap).
+The resultant graphs are:
+- For BTC:
+  - Price: [BTC_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTC_price.png)
+  - Market Cap: [BTC_mc.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTC_mc.png)
+  - Volume: [BTC_volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTC_volume.png)
+- For DGB:
+  - Price: [DGB_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/DGB_price.png)
+  - Market Cap: [DGB_mc.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/DGB_mc.png)
+  - Volume: [DGB_volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/DGB_volume.png)
+- For BTM:
+  - Price: [BTM_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTM_price.png)
+  - Market Cap: [BTM_mc.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTM_mc.png)
+  - Volume: [BTM_Volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/BTM_Volume.png)
+- For ADX:
+  - Price: [ADX_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ADX_price.png)
+  - Market Cap: [ADX_mc.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ADX_mc.png)
+  - Volume: [ADX_volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ADX_volume.png)
+- For ARPA:
+  - Price: [ARPA_price.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ARPA_price.png)
+  - Market Cap: [ARPA_mc.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ARPA_mc.png)
+  - Volume: [ARPA_volume.png](https://github.com/cbouts/midterm_project/blob/main/data_analysis/ARPA_volume.png)
+
+These graphs are examined and analyzed in [data_analysis.md](https://github.com/cbouts/midterm_project/blob/main/data_analysis.md).
+
+
+
+
+
