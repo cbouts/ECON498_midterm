@@ -22,8 +22,17 @@ in the terminal.
 
 ## Usage
 Running this projects takes 5 steps. They are listed and elaborated here.
-1. Step 1: request data by running [cmcap_coingecko_request.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_coingecko_request.py). In its current form, the file requests data at 15 minute intervals for the 48 hour time period of interest, resulting in (4 downloads per hour) * (48 hours) = 192 download processes.
-2. Step 2: parse the data for the two websites using the parse files ___ and _ . 
+
+### Step 1:
+
+Request data by running [cmcap_coingecko_request.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_coingecko_request.py). This file requests data from Coingecko using API and from Coinmarketcap using screen scraping. All you need to do is run the program and monitor the terminal output for errors which, because of the file's try/except/else format, will be printed out before the program continues to run. In its current form, the file requests data at 15 minute intervals for the 48 hour time period of interest, resulting in (4 downloads per hour) * (48 hours) = 192 download processes. Of course, this can be adapted to fit your needs as is illustrated here:
+- To get a different number of observations, you can change 192 to another number in this line of code:
+`for i in range(192):`
+- The 15 minute intervals are regulated by the 4 lines of code that say `time.sleep(15)` and the one line that says `time.sleep(840)`. Including 4 time.sleep periods of 15 seconds each throughout the program and 1 long 840 second time.sleep period yields 900 total seconds of sleep between the start of one round of downloads and the start of the next round. Note that you should always include some sleep time after your downloads in order to avoid breaking or getting banned from the sites.
+- Manipulating these `time.sleep()` and `for i in range():` lines allows you to change the length of the time period of interest, as well as the frequency of your observations. 
+
+### Step 2: 
+Parse the data for the two websites using the parse files ___ and _ . 
 3. Step 3: Run - with the coinmarketcap parsed data to request deep link information for each coin that features on the top 500 list over the time period of interest.
 4. Step 4: Run the deep link parse file to parse the deep link information to a new csv called -
 5. Step 5: Analyze the data on the 3 csvs. Run cleaning.py --- to determine how much data for each variable is missing. Using the CSVs, create Excel graphs to show differences in ----
