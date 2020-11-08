@@ -204,14 +204,13 @@ Run [cleaning.py](https://github.com/cbouts/midterm_project/blob/main/data_analy
 #### Step 5B: 
 Run [summary_statistics.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/summary_statistics.py) to get summary statistics for price, market cap, and volume for each coin from each website using [coingecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/coingecko_dataset.csv) and [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv). For each csv, the file identifies information about market cap, volume, and price for each coin and identifies the mean, standard deviation, minimum, and maximum. With this information, the file creates 6 new CSVs of summary statistics:
 - for Coinmarketcap:
-  - [price_cmc.csv]
-  - [volume_cmc.csv]
-  - [market_cap_cmc.csv]
+  - [price_cmc.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/price_cmc.csv)
+  - [volume_cmc.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/volume_cmc.csv)
+  - [market_cap_cmc.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_cmc.csv)
 - for Coingecko:
-  - [price_gecko.csv]
-  - [volume_gecko.csv]
-  - [market_cap_gecko.csv]
-
+  - [price_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/price_gecko.csv)
+  - [volume_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/volume_gecko.csv)
+  - [market_cap_gecko.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/market_cap_gecko.csv)
 
 #### Step 5C:
 Using [coingecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/coingecko_dataset.csv) and [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv), create Excel graphs to show differences in --
