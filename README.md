@@ -140,6 +140,15 @@ for link in df['link']:
 ```
 The resultant csv can be found here: [cmc_deeplink.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_deeplink.csv).
 
+4. Step 4: 
+Parse the deep link information by running [cmcap_deeplink_parse.py](https://github.com/cbouts/midterm_project/blob/main/cmcap_deeplink_parse.py). The file first creates the file that will hold the new csv of deep link information if it does not already exist:
+```
+if not os.path.exists("cmc_parsed_files"):
+	os.mkdir("cmc_parsed_files")
+```
+The file then creates a data frame and loops through each deep link html file. 
 
-4. Step 4: Run the deep link parse file to parse the deep link information to a new csv called -
+The htmls downloaded in such a way that some have all rows in one order within one tbody, but others have four tbodies containing the same rows in a different order. This is the reason for the "if/else" structure- some have a table length of 19, while others have a different length. Within each of these groups of htmls, some coins have incomplete data listed. This program skips over them and notes them in the terminal with an error message. This is the reason for the try/except structure.
+
+
 5. Step 5: Analyze the data on the 3 csvs. Run cleaning.py --- to determine how much data for each variable is missing. Using the CSVs, create Excel graphs to show differences in ----
