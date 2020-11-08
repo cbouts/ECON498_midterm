@@ -146,9 +146,53 @@ Parse the deep link information by running [cmcap_deeplink_parse.py](https://git
 if not os.path.exists("cmc_parsed_files"):
 	os.mkdir("cmc_parsed_files")
 ```
-The file then creates a data frame and loops through each deep link html file. 
+The file then creates a data frame and loops through each deep link html file to locate information about the coin and append this to the dataframe which will eventually form a new csv. This file has an interesting structure that can best be understood by looking at it and reading the explanation below:
+```
+if len(tables)==19:
+		try:
+			market_rank = rows[2].find("td").text.replace("#","")
+			ath = rows[8].find("div").text.replace("$","").replace(",","").replace(" USD","")
+			atl = rows[9].find("div").text.replace("$","").replace(",","").replace(" USD","")
+			roi = rows[1].find("span").text
+			total_supply = rows[6].find("td").text.replace(",","")
+			max_supply = rows[7].find("td").text.replace(",","")
 
-The htmls downloaded in such a way that some have all rows in one order within one tbody, but others have four tbodies containing the same rows in a different order. This is the reason for the "if/else" structure- some have a table length of 19, while others have a different length. Within each of these groups of htmls, some coins have incomplete data listed. This program skips over them and notes them in the terminal with an error message. This is the reason for the try/except structure.
+			df = df.append({
+						'name': one_file_name.replace("deep_link_html/","").replace(".html",""),
+						'market_rank': market_rank,
+						'ath': ath,
+						'atl': atl,
+						'roi': roi,
+						'total_supply': total_supply,
+						'max_supply': max_supply
+							}, ignore_index=True)
+		except:
+			print(" ERROR: WEBSITE HAS INCOMPLETE DATA FOR " + one_file_name.replace(".html",""))
+		
+	else:
+		try:
+			market_rank = rows[4].find("td").text.replace("#","")
+			ath = rows[13].find("div").text.replace("$","").replace(",","").replace(" USD","").replace(" /","")
+			atl = rows[14].find("div").text.replace("$","").replace(",","").replace(" USD","").replace(" /","")
+			roi = rows[15].find("span")
+			# roi = rows[15].find("span").text
+			total_supply = rows[17].find("td").text.replace(",","")
+			max_supply = rows[18].find("td").text.replace(",","")
+
+			df = df.append({
+						'name': one_file_name.replace("deep_link_html/","").replace(".html",""),
+						'market_rank': market_rank,
+						'ath': ath,
+						'atl': atl,
+						'roi': roi,
+						'total_supply': total_supply,
+						'max_supply': max_supply
+							}, ignore_index=True)
+		except: 
+			print(" ERROR: WEBSITE HAS INCOMPLETE DATA FOR " + one_file_name.replace(".html",""))
+```
+The deep link htmls downloaded in such a way that some have all rows in one order within one tbody, but others have four tbodies containing the same rows in a different order. This is the reason for the "if/else" structure- some have a table length of 19, while others have a different length. Within each of these groups of htmls, some coins have incomplete data listed. This program skips over them and notes them in the terminal with an error message. This is the reason for the try/except structure.
+
 
 
 5. Step 5: Analyze the data on the 3 csvs. Run cleaning.py --- to determine how much data for each variable is missing. Using the CSVs, create Excel graphs to show differences in ----
