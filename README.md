@@ -202,6 +202,16 @@ Create a new folder, [data_analysis](https://github.com/cbouts/midterm_project/t
 #### Step 5A:
 Run [cleaning.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cleaning.py) to determine how much data for each variable is missing. This file reads each of our 3 CSVs in turn, identifies the percentage of data missing in each column of each CSV, and prints the results in the terminal output. My results for this are presented in [data_analysis.md](https://github.com/cbouts/midterm_project/blob/main/data_analysis.md).
 #### Step 5B: 
-Present summary statistics 
+Run [summary_statistics.py](https://github.com/cbouts/midterm_project/blob/main/data_analysis/summary_statistics.py) to get summary statistics for price, market cap, and volume for each coin from each website using [coingecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/coingecko_dataset.csv) and [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv). For each csv, the file identifies information about market cap, volume, and price for each coin and identifies the mean, standard deviation, minimum, and maximum. With this information, the file creates 6 new CSVs of summary statistics:
+- for Coinmarketcap:
+  - [price_cmc.csv]
+  - [volume_cmc.csv]
+  - [market_cap_cmc.csv]
+- for Coingecko:
+  - [price_gecko.csv]
+  - [volume_gecko.csv]
+  - [market_cap_gecko.csv]
+
+
 #### Step 5C:
 Using [coingecko_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/coingecko_dataset.csv) and [cmc_dataset.csv](https://github.com/cbouts/midterm_project/blob/main/data_analysis/cmc_dataset.csv), create Excel graphs to show differences in --
