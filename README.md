@@ -275,17 +275,13 @@ for row in df_2:
 	name = row
 	geckolink = row.replace("-","%20")
 ```
+The if/else structure of the following code ensures that we get historical data for each coin one time from each website. This way, if the program is interrupted, it can be resumed without re-starting the request process. We first request data for the current coin from coinmarketcap, then from coingecko. To do this, we first create and open new html files (for coinmarketcap) and json files (for coingecko). We next use the names that we manipulated in the previous block of code (`"name"` and `"geckolink"`) in urls we've fetched from Coinmarketcap and from Coingecko's API page. The try/except/except/else structure ensures that the program continues running if it encounters url or http errors. 
 
+The file currently requests data from 11/01/2019-11/01/2020. This is fairly straightforward to see in the coinmarketcap request URL: `url = "https://coinmarketcap.com/currencies/" + name + "/historical-data/" + "?start=20191101&end=20201101"`. Here, the dates are formatted as year+month+day. It is less obvious in coingecko's request URL: `url = 'https://api.coingecko.com/api/v3/coins/' + geckolink + '/market_chart/range?vs_currency=usd&from=1572609600&to=1604235600'`. This is because coingecko's link includes the start and stop dates as UNIX timestamps. To get UNIX timestamps for your time period of interest, you can convert dates into UNIX timestamps with the website [epochconverter.com](https://www.epochconverter.com). After the coinmarketcap download, there is a sleep time of 30 seconds. There is an additional 70 seconds sleep time before the for loop restarts for the next coin. This results in a total sleep time of 100 seconds. The start and end dates and sleep times can be changed based on your needs, as described above in step 1.
 
-___________
+When you've made all adjustments, run the code and monitor the terminal output for errors.
 
-In its current form, the file requests data at 15 minute intervals for the 48 hour time period of interest, resulting in (4 downloads per hour) * (48 hours) = 192 download processes reflected in the beginning for the for loop: `for i in range(192):`. The file then requests the first page of 100 coins from coinmarketcap, the first 250 coins from coingecko, sleeps for 15 seconds, requests the second page of 100 coins from coinmarketcap and coins 250-500 from coingecko, sleeps for 15 seconds, then requests pages 3-5 (coins 300-500) from coinmarketcap (with sleep time of 15 seconds between these requests). After this, the program sleeps for 840 seconds. 
+I wrote parse files for the historical data from each site, but I could not get them to work after hours of trying. The parse file for coinmarketcap is incomplete. 
 
-Of course, this can be adapted to fit your needs as is illustrated here:
-- To get a different number of observations, you can change 192 to another number in this line of code:
-`for i in range(192):`
-- The 15 minute intervals are regulated by the 4 lines of code that say `time.sleep(15)` and the one line that says `time.sleep(840)`. Including 4 time.sleep periods of 15 seconds each throughout the program and 1 long 840 second time.sleep period yields 900 total seconds of sleep between the start of one round of downloads and the start of the next round. Note that you should always include some sleep time after your downloads in order to avoid breaking or getting banned from the sites.
-- Manipulating these `time.sleep()` and `for i in range():` lines allows you to change the length of the time period of interest, as well as the frequency of your observations.For example, changing `time.sleep(840)` to `time.sleep(540)` while also changing `for i in range(192):` to `for i in range(6):` will yield 6 downloads of the site 10 minutes apart over a 1 hour time period.
-
-Once you've configured the program to match your needs, you simply run it and monitor the terminal output for errors which will be printed without interrupting the program's progress due to the file's "try/except/else" format.
+Because I couldn't parse this data, I included the html and json files in the folders --- and ----.
 
