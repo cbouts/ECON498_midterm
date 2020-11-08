@@ -1,6 +1,5 @@
 import urllib.request
 import urllib.error
-# import requests.error
 import os
 import ssl
 import datetime
@@ -34,7 +33,6 @@ for row in df_2:
 		print("CMC historical " + name)
 		f = open("historical_html_files/" + name + ".html", "wb")
 		url = "https://coinmarketcap.com/currencies/" + name + "/historical-data/" + "?start=20191101&end=20201101"
-		# pdb.set_trace()
 		try:
 			response = urllib.request.urlopen(url, context=context)
 		except urllib.error.HTTPError as e:
